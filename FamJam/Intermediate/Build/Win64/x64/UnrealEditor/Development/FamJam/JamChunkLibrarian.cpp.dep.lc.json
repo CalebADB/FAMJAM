@@ -1,0 +1,17 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\tn-2019\\desktop\\work\\famjam\\famjam\\source\\famjam\\jamchunklibrarian.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\tn-2019\\desktop\\work\\famjam\\famjam\\intermediate\\build\\win64\\x64\\famjameditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\tn-2019\\desktop\\work\\famjam\\famjam\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\famjam\\definitions.famjam.h",
+            "c:\\users\\tn-2019\\desktop\\work\\famjam\\famjam\\source\\famjam\\jamchunklibrarian.h",
+            "c:\\users\\tn-2019\\desktop\\work\\famjam\\famjam\\source\\famjam\\jamlibrarian.h",
+            "c:\\users\\tn-2019\\desktop\\work\\famjam\\famjam\\intermediate\\build\\win64\\unrealeditor\\inc\\famjam\\uht\\jamlibrarian.generated.h",
+            "c:\\users\\tn-2019\\desktop\\work\\famjam\\famjam\\intermediate\\build\\win64\\unrealeditor\\inc\\famjam\\uht\\jamchunklibrarian.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

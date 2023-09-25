@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/TN-2019/Desktop/Work/FAMJAM/FamJam/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"C:/Users/TN-2019/Desktop/Work/FAMJAM/FamJam/Content/Jam/Recipes/BP_JamRecipe.uasset",
+				"C:/Users/TN-2019/Desktop/Work/FAMJAM/FamJam/Content/Jam/BP_Jam.uasset"
+			]
+		}
+	]
+}

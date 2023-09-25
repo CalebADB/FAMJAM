@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\FamJam.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\FamJam.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\FamJamEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\FamJam">
+      <UniqueIdentifier>{30904F4D-05BF-3E99-8AFF-E6B2BFB89959}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\FamJam\FamJam.Build.cs">
+      <Filter>Source\FamJam</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\FamJam\FamJam.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\FamJam.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\Jam.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\Jam.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamChef.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamChef.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamChunkLibrarian.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamChunkLibrarian.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamCook.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamCook.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamCookAudioLayer.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamCookAudioLayer.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamLibrarian.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamLibrarian.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamRecipe.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamRecipe.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamRecipeLibrarian.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamRecipeLibrarian.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
