@@ -199,9 +199,9 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamChunk>()
 #endif
 		static const UECodeGen_Private::FIntPropertyParams NewProp_MeasuresCount;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_BPM_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Tempo_MetaData[];
 #endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_BPM;
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_Tempo;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TimeSignature_MetaData[];
 #endif
@@ -264,12 +264,12 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamChunk>()
 #endif
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_MeasuresCount = { "MeasuresCount", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamChunk, MeasuresCount), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_MeasuresCount_MetaData), Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_MeasuresCount_MetaData) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_BPM_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_Tempo_MetaData[] = {
 		{ "Category", "JamChunk" },
 		{ "ModuleRelativePath", "JamChunkLibrarian.h" },
 	};
 #endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_BPM = { "BPM", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamChunk, BPM), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_BPM_MetaData), Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_BPM_MetaData) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_Tempo = { "Tempo", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamChunk, Tempo), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_Tempo_MetaData), Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_Tempo_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_TimeSignature_MetaData[] = {
 		{ "Category", "JamChunk" },
@@ -286,7 +286,7 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamChunk>()
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_Sound,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_Length,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_MeasuresCount,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_BPM,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_Tempo,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChunk_Statics::NewProp_TimeSignature,
 	};
 	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FJamChunk_Statics::ReturnStructParams = {
@@ -384,12 +384,12 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamChunk>()
 		{ EJamSoundCategory_StaticEnum, TEXT("EJamSoundCategory"), &Z_Registration_Info_UEnum_EJamSoundCategory, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3287790029U) },
 	};
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::ScriptStructInfo[] = {
-		{ FJamChunk::StaticStruct, Z_Construct_UScriptStruct_FJamChunk_Statics::NewStructOps, TEXT("JamChunk"), &Z_Registration_Info_UScriptStruct_JamChunk, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamChunk), 2523311438U) },
+		{ FJamChunk::StaticStruct, Z_Construct_UScriptStruct_FJamChunk_Statics::NewStructOps, TEXT("JamChunk"), &Z_Registration_Info_UScriptStruct_JamChunk, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamChunk), 1511109468U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UJamChunkLibrarian, UJamChunkLibrarian::StaticClass, TEXT("UJamChunkLibrarian"), &Z_Registration_Info_UClass_UJamChunkLibrarian, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UJamChunkLibrarian), 462214248U) },
+		{ Z_Construct_UClass_UJamChunkLibrarian, UJamChunkLibrarian::StaticClass, TEXT("UJamChunkLibrarian"), &Z_Registration_Info_UClass_UJamChunkLibrarian, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UJamChunkLibrarian), 67980433U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_549582521(TEXT("/Script/FamJam"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_1271974620(TEXT("/Script/FamJam"),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::ScriptStructInfo),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::EnumInfo));

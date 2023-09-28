@@ -23,6 +23,17 @@ void UJamRecipeLibrarian::BeginPlay()
 
 }
 
+bool UJamRecipeLibrarian::CheckIsLibraryComplete() 
+{
+	if (Library == nullptr)
+	{
+		UE_LOG(LogTemp, Error, TEXT("UJamRecipeLibrarian Library is null"));
+		return false;
+	}
+
+	UE_LOG(LogTemp, Warning, TEXT("UJamRecipeLibrarian Library was not actually checked. Method needs to be filled out"));
+	return true;
+}
 
 // Called every frame
 void UJamRecipeLibrarian::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -32,3 +43,18 @@ void UJamRecipeLibrarian::TickComponent(float DeltaTime, ELevelTick TickType, FA
 	// ...
 }
 
+UJamRecipe* UJamRecipeLibrarian::GetRecipe(FName RowName)
+{
+	if (!bIsLibraryComplete) return nullptr;
+
+	FJamRecipeIndex* JamRecipeIndex = Library->FindRow<FJamRecipeIndex>(RowName, "");
+
+	if (JamRecipeIndex == nullptr)
+	{
+		UE_LOG(LogTemp, Error, TEXT("JamRecipeIndex == nullptr when searching for %s"), *RowName.ToString());
+		return nullptr;
+	}
+
+	UE_LOG(LogTemp, Warning, TEXT("Found JamRecipeIndex when searching for %s"), *RowName.ToString());
+	return NewObject<UJamRecipe>(this, JamRecipeIndex->RecipeClass);
+}

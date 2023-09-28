@@ -58,7 +58,7 @@ struct FAMJAM_API FJamChunk : public FTableRowBase
 	int MeasuresCount = 0;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float BPM = 0.0f;
+	float Tempo = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FVector2D TimeSignature = FVector2D(0, 0);
@@ -72,11 +72,12 @@ public:
 	// Sets default values for this component's properties
 	UJamChunkLibrarian();
 
-	bool CheckIsLibraryComplete();
-
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
+
+private:
+	virtual bool CheckIsLibraryComplete() override;
 
 public:
 	// Called every frame

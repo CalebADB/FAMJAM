@@ -32,6 +32,11 @@ void EmptyLinkFunctionForGeneratedCodeJam() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_bIsJamPossible_MetaData[];
+#endif
+		static void NewProp_bIsJamPossible_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsJamPossible;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Chef_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Chef;
@@ -59,6 +64,17 @@ void EmptyLinkFunctionForGeneratedCodeJam() {}
 	};
 #endif
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AJam_Statics::NewProp_bIsJamPossible_MetaData[] = {
+		{ "Category", "Jam" },
+		{ "ModuleRelativePath", "Jam.h" },
+	};
+#endif
+	void Z_Construct_UClass_AJam_Statics::NewProp_bIsJamPossible_SetBit(void* Obj)
+	{
+		((AJam*)Obj)->bIsJamPossible = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AJam_Statics::NewProp_bIsJamPossible = { "bIsJamPossible", nullptr, (EPropertyFlags)0x0040000000020001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AJam), &Z_Construct_UClass_AJam_Statics::NewProp_bIsJamPossible_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AJam_Statics::NewProp_bIsJamPossible_MetaData), Z_Construct_UClass_AJam_Statics::NewProp_bIsJamPossible_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AJam_Statics::NewProp_Chef_MetaData[] = {
 		{ "Category", "Jam" },
 		{ "EditInline", "true" },
@@ -83,6 +99,7 @@ void EmptyLinkFunctionForGeneratedCodeJam() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AJam_Statics::NewProp_RecipeLibrarian = { "RecipeLibrarian", nullptr, (EPropertyFlags)0x0040000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AJam, RecipeLibrarian), Z_Construct_UClass_UJamRecipeLibrarian_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AJam_Statics::NewProp_RecipeLibrarian_MetaData), Z_Construct_UClass_AJam_Statics::NewProp_RecipeLibrarian_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AJam_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJam_Statics::NewProp_bIsJamPossible,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJam_Statics::NewProp_Chef,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJam_Statics::NewProp_ChunkLibrarian,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJam_Statics::NewProp_RecipeLibrarian,
@@ -125,9 +142,9 @@ void EmptyLinkFunctionForGeneratedCodeJam() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_Jam_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AJam, AJam::StaticClass, TEXT("AJam"), &Z_Registration_Info_UClass_AJam, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AJam), 949155026U) },
+		{ Z_Construct_UClass_AJam, AJam::StaticClass, TEXT("AJam"), &Z_Registration_Info_UClass_AJam, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AJam), 1657220524U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_Jam_h_1139062768(TEXT("/Script/FamJam"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_Jam_h_3501542669(TEXT("/Script/FamJam"),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_Jam_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_Jam_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -19,10 +19,15 @@ void UJamLibrarian::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
-	
+	bIsLibraryComplete = CheckIsLibraryComplete();
+	// ...	
 }
 
+bool UJamLibrarian::CheckIsLibraryComplete()
+{
+	UE_LOG(LogTemp, Error, TEXT("UJamLibrarian called method CheckIsLibraryComplete which is a \"pure virtual\" method"));
+	return false;
+}
 
 // Called every frame
 void UJamLibrarian::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)

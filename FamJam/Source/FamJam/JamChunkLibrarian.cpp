@@ -14,15 +14,24 @@ UJamChunkLibrarian::UJamChunkLibrarian()
 	// ...
 }
 
-bool UJamChunkLibrarian::CheckIsLibraryComplete()
+// Called when the game starts
+void UJamChunkLibrarian::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// ...
+
+}
+
+bool UJamChunkLibrarian::CheckIsLibraryComplete() 
 {
 	if (Library == nullptr)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Library is null"));
+		UE_LOG(LogTemp, Error, TEXT("UJamChunkLibrarian Library is null"));
 		return false;
 	}
 
-	bool bIsLibraryComplete = true;
+	bool bDoesLibraryHaveErrors = true;
 
 	TArray<FJamChunk*> Chunks;
 	Library->GetAllRows("", Chunks);
@@ -52,10 +61,10 @@ bool UJamChunkLibrarian::CheckIsLibraryComplete()
 			bIsChunkComplete = false;
 			debugString += "Length is " + FString::SanitizeFloat(Chunk->Length) + " ~ ";
 		}
-		if (Chunk->BPM <= 0.0f)
+		if (Chunk->Tempo <= 0.0f)
 		{
 			bIsChunkComplete = false;
-			debugString += "BPM is " + FString::SanitizeFloat(Chunk->BPM) + " ~ ";
+			debugString += "Tempo is " + FString::SanitizeFloat(Chunk->Tempo) + " ~ ";
 		}
 		if (Chunk->MeasuresCount <= 0)
 		{
@@ -70,22 +79,12 @@ bool UJamChunkLibrarian::CheckIsLibraryComplete()
 
 		if (!bIsChunkComplete)
 		{
-			bIsLibraryComplete = false;
+			bDoesLibraryHaveErrors = false;
 			UE_LOG(LogTemp, Warning, TEXT("%s"), *debugString);
 		}
 	}
 
-	return bIsLibrarianForgiving || bIsLibraryComplete;
-}
-
-
-// Called when the game starts
-void UJamChunkLibrarian::BeginPlay()
-{
-	Super::BeginPlay();
-
-	// ...
-
+	return bIsLibrarianForgiving || bDoesLibraryHaveErrors;
 }
 
 

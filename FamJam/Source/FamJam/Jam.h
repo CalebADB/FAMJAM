@@ -17,7 +17,8 @@ class FAMJAM_API AJam : public AActor
 
 
 private:
-	bool bIsJamTime = false;
+	UPROPERTY(VisibleAnywhere)
+	bool bIsJamPossible = false;
 
 	UPROPERTY(EditAnywhere)
 	UJamChef* Chef;

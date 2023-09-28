@@ -18,23 +18,20 @@ void AJam::BeginPlay()
 {
 	Super::BeginPlay();
 
-	bool bShouldJamTimeStart = true;
-
 	UE_LOG(LogTemp, Warning, TEXT("c++"));
 
-	if (!ChunkLibrarian->CheckIsLibraryComplete())
+	bool bIsJamValid = true;
+
+	if (!ChunkLibrarian->bIsLibraryComplete)
 	{
-		bShouldJamTimeStart = false;
-		UE_LOG(LogTemp, Warning, TEXT("Library is not complete"));
+		bIsJamValid = false;
+		UE_LOG(LogTemp, Error, TEXT("Library is not complete"));
 	}
 
-
-
-	bIsJamTime = bShouldJamTimeStart;
-
-	if (bIsJamTime)
+	if (bIsJamValid)
 	{
-		Chef->Initialize(ChunkLibrarian, RecipeLibrarian);
+		bIsJamPossible = true;
+		Chef->MiseEnPlace(ChunkLibrarian, RecipeLibrarian);
 	}
 }
 

@@ -39,10 +39,10 @@ void EmptyLinkFunctionForGeneratedCodeJamLibrarian() {}
 		static void NewProp_bIsLibrarianForgiving_SetBit(void* Obj);
 		static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsLibrarianForgiving;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_bIsLibraryLoaded_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_bIsLibraryComplete_MetaData[];
 #endif
-		static void NewProp_bIsLibraryLoaded_SetBit(void* Obj);
-		static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsLibraryLoaded;
+		static void NewProp_bIsLibraryComplete_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsLibraryComplete;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -54,8 +54,6 @@ void EmptyLinkFunctionForGeneratedCodeJamLibrarian() {}
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UJamLibrarian_Statics::DependentSingletons) < 16);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamLibrarian_Statics::Class_MetaDataParams[] = {
-		{ "BlueprintSpawnableComponent", "" },
-		{ "ClassGroupNames", "Custom" },
 		{ "IncludePath", "JamLibrarian.h" },
 		{ "ModuleRelativePath", "JamLibrarian.h" },
 	};
@@ -79,23 +77,22 @@ void EmptyLinkFunctionForGeneratedCodeJamLibrarian() {}
 	{
 		((UJamLibrarian*)Obj)->bIsLibrarianForgiving = 1;
 	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibrarianForgiving = { "bIsLibrarianForgiving", nullptr, (EPropertyFlags)0x0020080000020001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UJamLibrarian), &Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibrarianForgiving_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibrarianForgiving_MetaData), Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibrarianForgiving_MetaData) };
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibrarianForgiving = { "bIsLibrarianForgiving", nullptr, (EPropertyFlags)0x0020080000010001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UJamLibrarian), &Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibrarianForgiving_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibrarianForgiving_MetaData), Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibrarianForgiving_MetaData) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryLoaded_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryComplete_MetaData[] = {
 		{ "Category", "JamLibrarian" },
 		{ "ModuleRelativePath", "JamLibrarian.h" },
 	};
 #endif
-	void Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryLoaded_SetBit(void* Obj)
+	void Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryComplete_SetBit(void* Obj)
 	{
-		((UJamLibrarian*)Obj)->bIsLibraryLoaded = 1;
+		((UJamLibrarian*)Obj)->bIsLibraryComplete = 1;
 	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryLoaded = { "bIsLibraryLoaded", nullptr, (EPropertyFlags)0x0020080000020001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UJamLibrarian), &Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryLoaded_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryLoaded_MetaData), Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryLoaded_MetaData) };
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryComplete = { "bIsLibraryComplete", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UJamLibrarian), &Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryComplete_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryComplete_MetaData), Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryComplete_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UJamLibrarian_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamLibrarian_Statics::NewProp_Library,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibrarianForgiving,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryLoaded,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamLibrarian_Statics::NewProp_bIsLibraryComplete,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UJamLibrarian_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UJamLibrarian>::IsAbstract,
@@ -135,9 +132,9 @@ void EmptyLinkFunctionForGeneratedCodeJamLibrarian() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UJamLibrarian, UJamLibrarian::StaticClass, TEXT("UJamLibrarian"), &Z_Registration_Info_UClass_UJamLibrarian, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UJamLibrarian), 226748533U) },
+		{ Z_Construct_UClass_UJamLibrarian, UJamLibrarian::StaticClass, TEXT("UJamLibrarian"), &Z_Registration_Info_UClass_UJamLibrarian, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UJamLibrarian), 1483492796U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_2150487067(TEXT("/Script/FamJam"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_3343446890(TEXT("/Script/FamJam"),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

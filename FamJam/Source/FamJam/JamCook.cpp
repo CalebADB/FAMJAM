@@ -17,7 +17,6 @@ void AJamCook::BeginPlay()
 	Super::BeginPlay();
 	
 }
-
 // Called every frame
 void AJamCook::Tick(float DeltaTime)
 {
@@ -25,3 +24,19 @@ void AJamCook::Tick(float DeltaTime)
 
 }
 
+void AJamCook::MiseEnPlace(int LayerCount, FColor InDebugColor)
+{
+	for (int idx = 0; idx < LayerCount; idx++)
+	{
+		FString NameString = "Layer" + idx;
+		UJamCookAudioLayer* Layer = NewObject<UJamCookAudioLayer>(this, UJamCookAudioLayer::StaticClass(), FName(*NameString));
+		Layer->RegisterComponent();
+	}
+	
+
+}
+
+void AJamCook::ReceiveChop(FJamChop Chop)
+{
+
+}

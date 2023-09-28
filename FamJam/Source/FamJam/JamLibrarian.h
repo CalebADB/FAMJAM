@@ -7,7 +7,7 @@
 #include "JamLibrarian.generated.h"
 
 
-UCLASS(Abstract, ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+UCLASS(Abstract)
 class FAMJAM_API UJamLibrarian : public UActorComponent
 {
 	GENERATED_BODY()
@@ -16,10 +16,12 @@ protected:
 	UPROPERTY(EditDefaultsOnly, meta = (AllowPrivateAccess = "true"))
 	UDataTable* Library;
 
-	UPROPERTY(VisibleAnywhere, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, meta = (AllowPrivateAccess = "true"))
 	bool bIsLibrarianForgiving = true;
-	UPROPERTY(VisibleAnywhere, meta = (AllowPrivateAccess = "true"))
-	bool bIsLibraryLoaded = false;
+	
+public:
+	UPROPERTY(VisibleAnywhere)
+	bool bIsLibraryComplete = false;
 
 
 public:
@@ -30,9 +32,12 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	virtual bool CheckIsLibraryComplete();
+
 public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 
 };
+
