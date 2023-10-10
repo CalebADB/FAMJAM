@@ -20,7 +20,8 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	bool bIsJamPossible = false;
 
-	UPROPERTY(EditAnywhere)
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UJamChef* Chef;
 
 	UPROPERTY(EditAnywhere)
@@ -40,4 +41,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UFUNCTION(BlueprintNativeEvent)
+	void BlueprintTick(float DeltaTime);
 };

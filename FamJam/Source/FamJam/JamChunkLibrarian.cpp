@@ -44,22 +44,10 @@ bool UJamChunkLibrarian::CheckIsLibraryComplete()
 		bool bIsChunkComplete = true;
 		FString debugString = "Chunk_" + FString::FromInt(ChunkIdx) + " is not fully setup: ";
 
-		if (Chunk->Name == FName("None"))
-		{
-			bIsChunkComplete = false;
-			debugString += "Name is None ~ ";
-			//const UEnum* JamChunkNameEnum = FindObject<UEnum>(ANY_PACKAGE, TEXT("EJamChunkName"));
-			//debugString += "Name is " + JamChunkNameEnum->GetDisplayNameTextByValue((int64)Chunk->Name).ToString() + " ~ ";
-		}
 		if (Chunk->Sound == nullptr)
 		{
 			bIsChunkComplete = false;
 			debugString += "SoundData is null ~ ";
-		}
-		if (Chunk->Length <= 0.0f)
-		{
-			bIsChunkComplete = false;
-			debugString += "Length is " + FString::SanitizeFloat(Chunk->Length) + " ~ ";
 		}
 		if (Chunk->Tempo <= 0.0f)
 		{

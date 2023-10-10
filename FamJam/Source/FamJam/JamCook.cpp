@@ -24,19 +24,20 @@ void AJamCook::Tick(float DeltaTime)
 
 }
 
-void AJamCook::MiseEnPlace(int LayerCount, FColor InDebugColor)
+void AJamCook::MiseEnPlace(int LayerCount)
 {
 	for (int idx = 0; idx < LayerCount; idx++)
 	{
-		FString NameString = "Layer" + idx;
-		UJamCookAudioLayer* Layer = NewObject<UJamCookAudioLayer>(this, UJamCookAudioLayer::StaticClass(), FName(*NameString));
-		Layer->RegisterComponent();
+		FString NameString = "AudioLayer" + FString::FromInt(idx);
+		UE_LOG(LogTemp, Warning, TEXT("New audio layer made: %s"), *NameString);
+		UJamCookAudioLayer* AudioLayer = NewObject<UJamCookAudioLayer>(this, UJamCookAudioLayer::StaticClass(), FName(*NameString));
+		AudioLayer->RegisterComponent();
+		AudioLayers.Add(AudioLayer);
 	}
-	
-
 }
 
-void AJamCook::ReceiveChop(FJamChop Chop)
-{
+//void AJamCook::QueueChop(float ChopTime, int LayerIdx, FJamChunk Chunk, FJamChopSpecialActionParams SpecialActionParams)
+//{
+//	AudioLayers[LayerIdx]
+//}
 
-}

@@ -18,8 +18,6 @@ void AJam::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UE_LOG(LogTemp, Warning, TEXT("c++"));
-
 	bool bIsJamValid = true;
 
 	if (!ChunkLibrarian->bIsLibraryComplete)
@@ -40,7 +38,11 @@ void AJam::BeginPlay()
 void AJam::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	Chef->Update(DeltaTime);
+	BlueprintTick(DeltaTime);
 }
 
+void AJam::BlueprintTick_Implementation(float DeltaTime)
+{
 
+}

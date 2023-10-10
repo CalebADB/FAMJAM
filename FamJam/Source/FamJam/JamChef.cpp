@@ -32,46 +32,109 @@ void UJamChef::MiseEnPlace(UJamChunkLibrarian* InChunkLibrarian, UJamRecipeLibra
 }
 
 // Called every frame
-void UJamChef::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void UJamChef::Update(float DeltaTime)
 {
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	
-	if (!bIsReadingJam)
+	if (bShouldAttemptToReadRecipe && !bIsReadingRecipe)
 	{
-		bIsReadingJam = AttemptStartJam();
-		if (!bIsReadingJam) return;
+		bIsReadingRecipe = AttemptStartJam();
 	}
 
-	DictateRecipe(DeltaTime);
-	
-	// ...
+	if (!bIsReadingRecipe) return;
+
+	ConductCooks(DeltaTime);
 }
 
 bool UJamChef::AttemptStartJam()
 {
+	bShouldAttemptToReadRecipe = false;
+
+	//
 	if (!bIsMiseEnPlace) return false;
 
-	Recipe = RecipeLibrarian->GetRecipe(RecipeIndexName);
+	Recipe = RecipeLibrarian->GetRecipe(TargetRecipeIndexName);
 
 	if (Recipe == nullptr)
 	{
-		UE_LOG(LogTemp, Error, TEXT("Chef could not find Recipe_%s"), *RecipeIndexName.ToString())
+		UE_LOG(LogTemp, Error, TEXT("Chef could not find Recipe_%s"), *TargetRecipeIndexName.ToString())
 		return false;
 	}
 
+	//
 	RecipeOverview = Recipe->GetOverview();
 
-	for (TPair<FName, int> CookNameToLayerCount : RecipeOverview.CookNameToLayerCountMap)
+	for (TPair<FName, FJamRecipeCookOverview> CookOverview : RecipeOverview.CookNameToOverviewMap)
 	{
 		AJamCook * Cook = GetWorld()->SpawnActor<AJamCook>(AJamCook::StaticClass());
-		Cook->MiseEnPlace(CookNameToLayerCount.Value, RecipeOverview.CookNameToDebugColorMap[CookNameToLayerCount.Key]);
-		Cooks.Add(CookNameToLayerCount.Key, Cook);
+		Cook->MiseEnPlace(CookOverview.Value.LayerCount);
+		Cooks.Add(CookOverview.Key, Cook);
 	}
+
+	//
+	StepIdx = 0;
+	Tempo = Recipe->TempoStart;
+	MeasureRemaining += Recipe->Steps[StepIdx].MeasuresCount;
+
+	//
+	if(bShouldVisualizeJam) bShouldInitializeJamVisualizer = true;
 
 	return true;
 }
 
-void UJamChef::DictateRecipe(float DeltaTime)
+void UJamChef::FinishJam()
 {
+	//
+	Recipe = nullptr;
 
+	for (TPair<FName, AJamCook*> Cook : Cooks)
+	{
+		Cooks[Cook.Key]->Destroy();
+	}
+	Cooks.Empty();
+
+	bIsReadingRecipe = false;
+
+	UE_LOG(LogTemp, Warning, TEXT("Song ended"))
 }
+
+void UJamChef::ConductCooks(float DeltaTime)
+{
+	if (StepIdx >= Recipe->Steps.Num())
+	{
+		return;
+	}
+	Time += DeltaTime;
+
+	MeasureRemaining -= DeltaTime * ((Tempo / 60.0f) / TimeSignature.X);
+
+	if (MeasureRemaining <= 0.0f)
+	{
+		if (StepIdx+1 >= Recipe->Steps.Num())
+		{
+			FinishJam();
+
+			return;
+		}
+		StepIdx++;
+		MeasureRemaining = Recipe->Steps[StepIdx].MeasuresCount;
+
+		StepChopIdxsOrdered.Empty();
+
+		// Special Action Handling
+	}
+	//UE_LOG(LogTemp, Warning, TEXT("Conducting cooks at t_%.5f with %.5f_measures remaining"), Time, MeasureRemaining);
+
+	for (int ChopIdx = 0; ChopIdx < Recipe->Steps[StepIdx].Chops.Num(); ChopIdx++)
+	{
+		if (StepChopIdxsOrdered.Contains(ChopIdx)) continue;
+
+		FJamChop Chop = Recipe->Steps[StepIdx].Chops[ChopIdx];		
+		if (Chop.MeasureStart <= Recipe->Steps[StepIdx].MeasuresCount - MeasureRemaining)
+		{
+			StepChopIdxsOrdered.Add(ChopIdx);
+			UE_LOG(LogTemp, Warning, TEXT("In Step_%d, Chop_%d For Cook_%s, Layer_%d was played at t_%.5f with %.5f measures remaining"), StepIdx, ChopIdx, *Chop.CookName.ToString(), Chop.CookLayerIdx, Time, MeasureRemaining);
+		}
+	}
+}
+
+
+

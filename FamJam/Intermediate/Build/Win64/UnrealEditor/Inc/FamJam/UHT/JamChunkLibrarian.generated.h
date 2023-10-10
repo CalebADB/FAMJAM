@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FAMJAM_JamChunkLibrarian_generated_h
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_40_GENERATED_BODY \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_39_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamChunk_Statics; \
 	static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
@@ -22,12 +22,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamChunk>();
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_SPARSE_DATA
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_ACCESSORS
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_INCLASS_NO_PURE_DECLS \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_SPARSE_DATA
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_ACCESSORS
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUJamChunkLibrarian(); \
 	friend struct Z_Construct_UClass_UJamChunkLibrarian_Statics; \
@@ -36,7 +36,7 @@ public: \
 	DECLARE_SERIALIZER(UJamChunkLibrarian)
 
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_ENHANCED_CONSTRUCTORS \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UJamChunkLibrarian(UJamChunkLibrarian&&); \
@@ -48,17 +48,17 @@ public: \
 	NO_API virtual ~UJamChunkLibrarian();
 
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_67_PROLOG
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_GENERATED_BODY \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_57_PROLOG
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_SPARSE_DATA \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_ACCESSORS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_INCLASS_NO_PURE_DECLS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_70_ENHANCED_CONSTRUCTORS \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_SPARSE_DATA \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_ACCESSORS \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_INCLASS_NO_PURE_DECLS \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_60_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -71,27 +71,26 @@ template<> FAMJAM_API UClass* StaticClass<class UJamChunkLibrarian>();
 
 #define FOREACH_ENUM_EJAMKEY(op) \
 	op(EJamKey::None) \
-	op(EJamKey::A) \
-	op(EJamKey::Am) \
-	op(EJamKey::B) \
-	op(EJamKey::Bm) \
-	op(EJamKey::C) \
-	op(EJamKey::Cm) \
-	op(EJamKey::D) \
-	op(EJamKey::Dm) \
-	op(EJamKey::E) \
-	op(EJamKey::Em) \
+	op(EJamKey::Gb) \
+	op(EJamKey::Db) \
+	op(EJamKey::Ab) \
+	op(EJamKey::Eb) \
+	op(EJamKey::Bb) \
 	op(EJamKey::F) \
-	op(EJamKey::Fm) \
+	op(EJamKey::C) \
 	op(EJamKey::G) \
-	op(EJamKey::Gm) 
+	op(EJamKey::D) \
+	op(EJamKey::A) \
+	op(EJamKey::E) \
+	op(EJamKey::B) 
 
 enum class EJamKey;
 template<> struct TIsUEnumClass<EJamKey> { enum { Value = true }; };
 template<> FAMJAM_API UEnum* StaticEnum<EJamKey>();
 
 #define FOREACH_ENUM_EJAMSOUNDCATEGORY(op) \
-	op(EJamSoundCategory::None) 
+	op(EJamSoundCategory::None) \
+	op(EJamSoundCategory::Organ) 
 
 enum class EJamSoundCategory;
 template<> struct TIsUEnumClass<EJamSoundCategory> { enum { Value = true }; };

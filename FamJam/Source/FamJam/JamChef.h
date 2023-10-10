@@ -26,14 +26,42 @@ private:
 
 	TMap<FName, AJamCook*> Cooks;
 
+public:
 	UPROPERTY(EditAnywhere)
-	FName RecipeIndexName;
-	UPROPERTY(VisibleAnywhere)
+	FName TargetRecipeIndexName;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	UJamRecipe* Recipe = nullptr;
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	FJamRecipeOverview RecipeOverview;
 
-	bool bIsReadingJam = false;
+	UPROPERTY(EditAnywhere)
+	bool bShouldAttemptToReadRecipe = false;
+	UPROPERTY(VisibleAnywhere)
+	bool bIsReadingRecipe = false;
+
+	UPROPERTY(EditAnywhere)
+	bool bShouldVisualizeJam = false;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	bool bShouldInitializeJamVisualizer = false;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float Time;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int StepIdx;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float MeasureRemaining;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float Tempo;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FVector2D TimeSignature = FVector2D(4,4);
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	EJamKey Key;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float VolumeRatio;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	TArray<int> StepChopIdxsOrdered;
 
 public:
 	// Sets default values for this component's properties
@@ -48,10 +76,10 @@ public:
 
 public:
 	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	void Update(float DeltaTime);
 
 	bool AttemptStartJam();
-
-	void DictateRecipe(float DeltaTime);
-
+	void FinishJam();
+private:
+	void ConductCooks(float DeltaTime);
 };

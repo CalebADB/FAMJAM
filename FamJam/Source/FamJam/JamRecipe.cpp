@@ -6,15 +6,16 @@
 FJamRecipeOverview UJamRecipe::GetOverview()
 {
 	FJamRecipeOverview Overview;
-	
-	Overview.VolumeRatioMax = VolumeRatioStart;
+	FString DebugAllCooksString;
 
+	Overview.VolumeRatioMax = VolumeRatioStart;
+	float StepMeasureStart = 0;
 	for (FJamStep Step : Steps)
 	{
-		if (Overview.LastMeasure < (Step.MeasureStart + Step.MeasuresCount))
+		if (Overview.LastMeasure < (StepMeasureStart + Step.MeasuresCount))
 		{
-			Overview.LastMeasure = Step.MeasureStart + Step.MeasuresCount;
-			UE_LOG(LogTemp, Warning, TEXT("Step at measure_%f has the latest measure at %f"), Step.MeasureStart, Overview.LastMeasure);
+			Overview.LastMeasure = StepMeasureStart + Step.MeasuresCount;
+			//UE_LOG(LogTemp, Warning, TEXT("Step at measure_%f has the latest measure at %f"), StepMeasureStart, Overview.LastMeasure);
 
 		}
 
@@ -29,10 +30,10 @@ FJamRecipeOverview UJamRecipe::GetOverview()
 
 		for (FJamChop Chop : Step.Chops)
 		{
-			if (Overview.LastMeasure < (Step.MeasureStart + Chop.MeasureStart + Chop.MeasureCount))
+			if (Overview.LastMeasure < (StepMeasureStart + Chop.MeasureStart + Chop.MeasureCount))
 			{
-				Overview.LastMeasure = Step.MeasureStart + Chop.MeasureStart + Chop.MeasureCount;
-				UE_LOG(LogTemp, Warning, TEXT("Chop for Cook_%s_Layer_%d has the latest measure at %f"), Chop.ChunkName, Chop.CookLayer, Overview.LastMeasure);
+				Overview.LastMeasure = StepMeasureStart + Chop.MeasureStart + Chop.MeasureCount;
+				//UE_LOG(LogTemp, Warning, TEXT("Chop for Cook_%s_Layer_%d has the latest measure at %f"), Chop.ChunkName, Chop.CookLayerIdx, Overview.LastMeasure);
 			}
 
 			for (TPair<FName, FJamChopSpecialActionParams> ChopSpecialActionKeyToParams : Chop.SpecialActionKeyToParamsMap)
@@ -43,36 +44,30 @@ FJamRecipeOverview UJamRecipe::GetOverview()
 				}
 			}
 
-			if (Overview.CookNameToLayerCountMap.Contains(Chop.CookName))
+			if (Overview.CookNameToOverviewMap.Contains(Chop.CookName))
 			{
-				if (Overview.CookNameToLayerCountMap[Chop.CookName] < Chop.CookLayer) Overview.CookNameToLayerCountMap[Chop.CookName] = Chop.CookLayer;
+				if (Overview.CookNameToOverviewMap[Chop.CookName].LayerCount < Chop.CookLayerIdx) Overview.CookNameToOverviewMap[Chop.CookName].LayerCount = Chop.CookLayerIdx;
 			}
 			else
 			{
-				Overview.CookNameToLayerCountMap.Add(Chop.CookName, Chop.CookLayer);
+				FJamRecipeCookOverview CookOverview;
+				DebugAllCooksString += "Cook_" + Chop.CookName.ToString() + ", ";
+				CookOverview.LayerCount = Chop.CookLayerIdx;
+				Overview.CookNameToOverviewMap.Add(Chop.CookName, CookOverview);
 			}
 		}
+		StepMeasureStart += Step.MeasuresCount;
 	}
 
-	for (TPair<FName, int> CookNameToLayerCount : Overview.CookNameToLayerCountMap)
+	for (TPair<FName, FJamRecipeCookOverviewParams> CookNameToOverviewParams : CookNameToOverviewParamsMap)
 	{
-		if (CookNameToDebugColorMap.Contains(CookNameToLayerCount.Key))
+		if (Overview.CookNameToOverviewMap.Contains(CookNameToOverviewParams.Key))
 		{
-			Overview.CookNameToDebugColorMap.Add(CookNameToLayerCount.Key, CookNameToDebugColorMap[CookNameToLayerCount.Key]);
+			Overview.CookNameToOverviewMap[CookNameToOverviewParams.Key].CookColor = CookNameToOverviewParams.Value.CookColor;
+			Overview.CookNameToOverviewMap[CookNameToOverviewParams.Key].ChopColor = CookNameToOverviewParams.Value.ChopColor;
+			Overview.CookNameToOverviewMap[CookNameToOverviewParams.Key].MinceColor = CookNameToOverviewParams.Value.MinceColor;
 		}
-		else
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s does not have a debug color"), *CookNameToLayerCount.Key.ToString())
-			Overview.CookNameToDebugColorMap.Add(CookNameToLayerCount.Key, CookDefaultDebugColor);
-		}
-	}
-
-	for (TPair<FName, FColor> CookNameToDebugColor : CookNameToDebugColorMap)
-	{
-		if (!Overview.CookNameToLayerCountMap.Contains(CookNameToDebugColor.Key))
-		{
-			UE_LOG(LogTemp, Error, TEXT("%s does not exist in Overview.CookNameToLayerCountMap"), *CookNameToDebugColor.Key.ToString())
-		}
+		else UE_LOG(LogTemp, Error, TEXT("The CookOverviewParams for Cook_%s were not found within the existing cooks: %s"), *CookNameToOverviewParams.Key.ToString(), *DebugAllCooksString)
 	}
 
 	return Overview;

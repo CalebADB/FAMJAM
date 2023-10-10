@@ -12,26 +12,25 @@ UENUM(BlueprintType)
 enum class EJamKey
 {
 	None,
-	A,
-	Am,
-	B,
-	Bm,
-	C,
-	Cm,
-	D,
-	Dm,
-	E,
-	Em,
+	Gb,
+	Db,
+	Ab,
+	Eb,
+	Bb,
 	F,
-	Fm,
+	C,
 	G,
-	Gm
+	D,
+	A,
+	E,
+	B
 };
 
 UENUM(BlueprintType)
 enum class EJamSoundCategory
 {
-	None
+	None,
+	Organ
 };
 
 USTRUCT(BlueprintType)
@@ -40,28 +39,19 @@ struct FAMJAM_API FJamChunk : public FTableRowBase
 	GENERATED_USTRUCT_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FName Name;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	EJamKey Key = EJamKey::None;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	EJamSoundCategory SoundCategory = EJamSoundCategory::None;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USoundBase* Sound;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float Length = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int MeasuresCount = 0;
-
+	float MeasuresCount = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float Tempo = 0.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FVector2D TimeSignature = FVector2D(0,0);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FVector2D TimeSignature = FVector2D(0, 0);
+	EJamKey Key = EJamKey::None;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	EJamSoundCategory SoundCategory = EJamSoundCategory::None;
 };
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))

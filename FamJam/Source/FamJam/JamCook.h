@@ -14,8 +14,9 @@ class FAMJAM_API AJamCook : public AActor
 {
 	GENERATED_BODY()
 	
-
-	TArray<UJamCookAudioLayer*> Layers;
+public:
+	UPROPERTY(VisibleAnywhere)
+	TArray<UJamCookAudioLayer*> AudioLayers;
 
 public:	
 	// Sets default values for this actor's properties
@@ -26,11 +27,11 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	void MiseEnPlace(int LayerCount, FColor InDebugColor);
+	void MiseEnPlace(int LayerCount);
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	void ReceiveChop(FJamChop Chop);
+	//void QueueChop(int LayerIdx, FJamChunk Chunk, FJamChopSpecialActionParams SpecialActionParams);
 };
