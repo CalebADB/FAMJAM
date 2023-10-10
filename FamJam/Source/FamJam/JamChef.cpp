@@ -85,6 +85,9 @@ void UJamChef::FinishJam()
 	//
 	Recipe = nullptr;
 
+	int debugValue1 = 1;
+
+
 	for (TPair<FName, AJamCook*> Cook : Cooks)
 	{
 		Cooks[Cook.Key]->Destroy();
@@ -121,7 +124,7 @@ void UJamChef::ConductCooks(float DeltaTime)
 
 		// Special Action Handling
 	}
-	//UE_LOG(LogTemp, Warning, TEXT("Conducting cooks at t_%.5f with %.5f_measures remaining"), Time, MeasureRemaining);
+	UE_LOG(LogTemp, Warning, TEXT("Conducting cooks at t_%.5f with %.5f_measures remaining"), Time, MeasureRemaining);
 
 	for (int ChopIdx = 0; ChopIdx < Recipe->Steps[StepIdx].Chops.Num(); ChopIdx++)
 	{

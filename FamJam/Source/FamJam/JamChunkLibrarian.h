@@ -34,7 +34,7 @@ enum class EJamSoundCategory
 };
 
 USTRUCT(BlueprintType)
-struct FAMJAM_API FJamChunk : public FTableRowBase
+struct FAMJAM_API FJamChunk
 {
 	GENERATED_USTRUCT_BODY()
 
@@ -46,12 +46,21 @@ struct FAMJAM_API FJamChunk : public FTableRowBase
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float Tempo = 0.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FVector2D TimeSignature = FVector2D(0,0);
+	FVector2D TimeSignature = FVector2D(0, 0);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	EJamKey Key = EJamKey::None;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	EJamSoundCategory SoundCategory = EJamSoundCategory::None;
+};
+
+USTRUCT(BlueprintType)
+struct FAMJAM_API FJamChunkIndex : public FTableRowBase
+{
+	GENERATED_USTRUCT_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FJamChunk Chunk;
 };
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
