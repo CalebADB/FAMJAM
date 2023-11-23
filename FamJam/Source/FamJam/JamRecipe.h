@@ -3,6 +3,7 @@
 #pragma once
 
 #include "JamChunkLibrarian.h"
+#include "JamCookBoard.h"
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
@@ -43,7 +44,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FName CookName;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int TriggerId = -1;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int CookLayerIdx = 1;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float MeasureStart = 0.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -133,6 +137,11 @@ struct FAMJAM_API FJamRecipeCookOverviewParams
 	GENERATED_USTRUCT_BODY()
 
 public:
+	int LayerCountMax = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<AJamCookBoard> DefaultBoard;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TMap<int, TSubclassOf<AJamCookBoard>> LayerToCustomBoard;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FColor CookColor = FColor(0, 0, 0);
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -148,7 +157,7 @@ struct FAMJAM_API FJamRecipeCookOverview
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int LayerCount;
+	TArray<TSubclassOf<AJamCookBoard>> BoardClasses;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FColor CookColor = FColor(180, 132, 66);
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -169,7 +178,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float VolumeRatioMax = 0.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TMap<FName, FJamRecipeCookOverview> CookNameToOverviewMap;
+	TMap<FName, FJamRecipeCookOverview> CookNameToOverviewMap = TMap<FName, FJamRecipeCookOverview>();
 };
 
 

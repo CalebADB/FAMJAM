@@ -62,17 +62,64 @@ bool UJamChef::AttemptStartJam()
 	//
 	RecipeOverview = Recipe->GetOverview();
 
+	if (RecipeOverview.CookNameToOverviewMap.Num() == 0)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Overview is missing Cooks. It is possible Recipe has other defects. Recipe is being thrown"))
+			return false;
+	}
+
+	TArray<AActor*> CookActors = {};
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AJamCook::StaticClass(), CookActors);
+
 	for (TPair<FName, FJamRecipeCookOverview> CookOverview : RecipeOverview.CookNameToOverviewMap)
 	{
-		AJamCook * Cook = GetWorld()->SpawnActor<AJamCook>(AJamCook::StaticClass());
-		Cook->MiseEnPlace(CookOverview.Value.LayerCount);
+		AJamCook* Cook = nullptr;
+		
+		// Find Cook in game world with matching name
+		for (AActor* CookActor : CookActors)
+		{
+			Cook = Cast<AJamCook>(CookActor);
+
+			UE_LOG(LogTemp, Warning, TEXT("Looking at Cook_%s"), *Cook->JamName.ToString());
+			
+			if (Cook->JamName == CookOverview.Key)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Chef found Cook_%s in the world"), *Cook->GetName());
+				break;
+			}
+			else
+			{
+				Cook = nullptr;
+			}
+		}
+
+		// Spawn cook if not found in game world
+		if (Cook == nullptr)
+		{
+			UE_LOG(LogTemp, Error, TEXT("Cook_%s was not found in the world. Spawning new cook"), *CookOverview.Key.ToString());
+
+			Cook = GetWorld()->SpawnActor<AJamCook>(AJamCook::StaticClass());
+			Cook->JamName = CookOverview.Key;
+		}
+
+		// Instance each cook for jam
+		Cook->MiseEnPlace(ChunkLibrarian, CookOverview.Value.BoardClasses);
 		Cooks.Add(CookOverview.Key, Cook);
 	}
 
 	//
-	StepIdx = 0;
+	MeasureIdx = 0;
+
 	Tempo = Recipe->TempoStart;
-	MeasureRemaining += Recipe->Steps[StepIdx].MeasuresCount;
+	NextStepIdx = 0;
+	NextStepMeasureIdx = 0;
+	CallChops(NextStepMeasureIdx, Recipe->Steps[NextStepIdx]);
+
+	StepIdx = NextStepIdx;
+	NextStepIdx = StepIdx + 1;
+	NextStepMeasureIdx = Recipe->Steps[StepIdx].MeasuresCount;
+	CallChops(NextStepMeasureIdx, Recipe->Steps[NextStepIdx]);
+
 
 	//
 	if(bShouldVisualizeJam) bShouldInitializeJamVisualizer = true;
@@ -84,9 +131,6 @@ void UJamChef::FinishJam()
 {
 	//
 	Recipe = nullptr;
-
-	int debugValue1 = 1;
-
 
 	for (TPair<FName, AJamCook*> Cook : Cooks)
 	{
@@ -103,39 +147,46 @@ void UJamChef::ConductCooks(float DeltaTime)
 {
 	if (StepIdx >= Recipe->Steps.Num())
 	{
+		UE_LOG(LogTemp, Error, TEXT("Chef is trying to call Step_%d which doesn't exist"), StepIdx);
+
 		return;
 	}
-	Time += DeltaTime;
 
-	MeasureRemaining -= DeltaTime * ((Tempo / 60.0f) / TimeSignature.X);
+	//UE_LOG(LogTemp, Warning, TEXT("MeasureIdx_%.5f"), MeasureIdx);
 
-	if (MeasureRemaining <= 0.0f)
+	if (MeasureIdx >= NextStepMeasureIdx)
 	{
-		if (StepIdx+1 >= Recipe->Steps.Num())
+		if (NextStepIdx >= Recipe->Steps.Num())
 		{
 			FinishJam();
-
 			return;
 		}
-		StepIdx++;
-		MeasureRemaining = Recipe->Steps[StepIdx].MeasuresCount;
+		StepIdx = NextStepIdx;
+		NextStepMeasureIdx += Recipe->Steps[StepIdx].MeasuresCount;
 
-		StepChopIdxsOrdered.Empty();
+		// Select Default NextStep
+		NextStepIdx = StepIdx + 1;
 
-		// Special Action Handling
-	}
-	UE_LOG(LogTemp, Warning, TEXT("Conducting cooks at t_%.5f with %.5f_measures remaining"), Time, MeasureRemaining);
-
-	for (int ChopIdx = 0; ChopIdx < Recipe->Steps[StepIdx].Chops.Num(); ChopIdx++)
-	{
-		if (StepChopIdxsOrdered.Contains(ChopIdx)) continue;
-
-		FJamChop Chop = Recipe->Steps[StepIdx].Chops[ChopIdx];		
-		if (Chop.MeasureStart <= Recipe->Steps[StepIdx].MeasuresCount - MeasureRemaining)
+		// Prep next chops
+		if (NextStepIdx < Recipe->Steps.Num())
 		{
-			StepChopIdxsOrdered.Add(ChopIdx);
-			UE_LOG(LogTemp, Warning, TEXT("In Step_%d, Chop_%d For Cook_%s, Layer_%d was played at t_%.5f with %.5f measures remaining"), StepIdx, ChopIdx, *Chop.CookName.ToString(), Chop.CookLayerIdx, Time, MeasureRemaining);
+			CallChops(NextStepMeasureIdx, Recipe->Steps[NextStepIdx]);
 		}
+	}
+
+	for (TPair<FName, AJamCook*> Cook : Cooks)
+	{
+		Cook.Value->ProcessChops(MeasureIdx, Tempo);
+	}
+
+	MeasureIdx += DeltaTime * ((Tempo / 60.0f) / TimeSignature.X);
+}
+
+void UJamChef::CallChops(float StepMeasureIdx, FJamStep Step)
+{
+	for (FJamChop Chop : Step.Chops)
+	{
+		Cooks[Chop.CookName]->ReceiveCalledChop(StepMeasureIdx, Chop);
 	}
 }
 

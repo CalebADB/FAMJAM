@@ -19,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeJamChunkLibrarian() {}
 	FAMJAM_API UEnum* Z_Construct_UEnum_FamJam_EJamSoundCategory();
 	FAMJAM_API UScriptStruct* Z_Construct_UScriptStruct_FJamChunk();
 	FAMJAM_API UScriptStruct* Z_Construct_UScriptStruct_FJamChunkIndex();
+	FAMJAM_API UScriptStruct* Z_Construct_UScriptStruct_FJamChunkLibraryRow();
 	UPackage* Z_Construct_UPackage__Script_FamJam();
 // End Cross Module References
 	static FEnumRegistrationInfo Z_Registration_Info_UEnum_EJamKey;
@@ -354,6 +355,77 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamChunkIndex>()
 		}
 		return Z_Registration_Info_UScriptStruct_JamChunkIndex.InnerSingleton;
 	}
+
+static_assert(std::is_polymorphic<FJamChunkLibraryRow>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FJamChunkLibraryRow cannot be polymorphic unless super FTableRowBase is polymorphic");
+
+	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_JamChunkLibraryRow;
+class UScriptStruct* FJamChunkLibraryRow::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_JamChunkLibraryRow.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_JamChunkLibraryRow.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FJamChunkLibraryRow, (UObject*)Z_Construct_UPackage__Script_FamJam(), TEXT("JamChunkLibraryRow"));
+	}
+	return Z_Registration_Info_UScriptStruct_JamChunkLibraryRow.OuterSingleton;
+}
+template<> FAMJAM_API UScriptStruct* StaticStruct<FJamChunkLibraryRow>()
+{
+	return FJamChunkLibraryRow::StaticStruct();
+}
+	struct Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
+#endif
+		static void* NewStructOps();
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Chunk_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Chunk;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UECodeGen_Private::FStructParams ReturnStructParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::Struct_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ModuleRelativePath", "JamChunkLibrarian.h" },
+	};
+#endif
+	void* Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FJamChunkLibraryRow>();
+	}
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::NewProp_Chunk_MetaData[] = {
+		{ "Category", "JamChunkLibraryRow" },
+		{ "ModuleRelativePath", "JamChunkLibrarian.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::NewProp_Chunk = { "Chunk", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamChunkLibraryRow, Chunk), Z_Construct_UScriptStruct_FJamChunk, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::NewProp_Chunk_MetaData), Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::NewProp_Chunk_MetaData) }; // 3451683250
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::NewProp_Chunk,
+	};
+	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::ReturnStructParams = {
+		(UObject* (*)())Z_Construct_UPackage__Script_FamJam,
+		Z_Construct_UScriptStruct_FTableRowBase,
+		&NewStructOps,
+		"JamChunkLibraryRow",
+		Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::PropPointers,
+		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::PropPointers),
+		sizeof(FJamChunkLibraryRow),
+		alignof(FJamChunkLibraryRow),
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EStructFlags(0x00000201),
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::Struct_MetaDataParams)
+	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::PropPointers) < 2048);
+	UScriptStruct* Z_Construct_UScriptStruct_FJamChunkLibraryRow()
+	{
+		if (!Z_Registration_Info_UScriptStruct_JamChunkLibraryRow.InnerSingleton)
+		{
+			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_JamChunkLibraryRow.InnerSingleton, Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::ReturnStructParams);
+		}
+		return Z_Registration_Info_UScriptStruct_JamChunkLibraryRow.InnerSingleton;
+	}
 	void UJamChunkLibrarian::StaticRegisterNativesUJamChunkLibrarian()
 	{
 	}
@@ -429,11 +501,12 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamChunkIndex>()
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::ScriptStructInfo[] = {
 		{ FJamChunk::StaticStruct, Z_Construct_UScriptStruct_FJamChunk_Statics::NewStructOps, TEXT("JamChunk"), &Z_Registration_Info_UScriptStruct_JamChunk, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamChunk), 3451683250U) },
 		{ FJamChunkIndex::StaticStruct, Z_Construct_UScriptStruct_FJamChunkIndex_Statics::NewStructOps, TEXT("JamChunkIndex"), &Z_Registration_Info_UScriptStruct_JamChunkIndex, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamChunkIndex), 3494645552U) },
+		{ FJamChunkLibraryRow::StaticStruct, Z_Construct_UScriptStruct_FJamChunkLibraryRow_Statics::NewStructOps, TEXT("JamChunkLibraryRow"), &Z_Registration_Info_UScriptStruct_JamChunkLibraryRow, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamChunkLibraryRow), 2115583430U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_UJamChunkLibrarian, UJamChunkLibrarian::StaticClass, TEXT("UJamChunkLibrarian"), &Z_Registration_Info_UClass_UJamChunkLibrarian, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UJamChunkLibrarian), 67980433U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_4272291894(TEXT("/Script/FamJam"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_3650882665(TEXT("/Script/FamJam"),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::ScriptStructInfo),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChunkLibrarian_h_Statics::EnumInfo));

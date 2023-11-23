@@ -9,9 +9,11 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeJamRecipe() {}
 // Cross Module References
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FColor();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector2D();
+	FAMJAM_API UClass* Z_Construct_UClass_AJamCookBoard_NoRegister();
 	FAMJAM_API UClass* Z_Construct_UClass_UJamRecipe();
 	FAMJAM_API UClass* Z_Construct_UClass_UJamRecipe_NoRegister();
 	FAMJAM_API UEnum* Z_Construct_UEnum_FamJam_EJamKey();
@@ -235,6 +237,10 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamChop>()
 #endif
 		static const UECodeGen_Private::FNamePropertyParams NewProp_CookName;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_TriggerId_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_TriggerId;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CookLayerIdx_MetaData[];
 #endif
 		static const UECodeGen_Private::FIntPropertyParams NewProp_CookLayerIdx;
@@ -285,6 +291,13 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamChop>()
 #endif
 	const UECodeGen_Private::FNamePropertyParams Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_CookName = { "CookName", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamChop, CookName), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_CookName_MetaData), Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_CookName_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_TriggerId_MetaData[] = {
+		{ "Category", "JamChop" },
+		{ "ModuleRelativePath", "JamRecipe.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_TriggerId = { "TriggerId", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamChop, TriggerId), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_TriggerId_MetaData), Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_TriggerId_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_CookLayerIdx_MetaData[] = {
 		{ "Category", "JamChop" },
 		{ "ModuleRelativePath", "JamRecipe.h" },
@@ -325,6 +338,7 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamChop>()
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FJamChop_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_ChunkName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_CookName,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_TriggerId,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_CookLayerIdx,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_MeasureStart,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamChop_Statics::NewProp_MeasureCount,
@@ -822,14 +836,14 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamStep>()
 	};
 #endif
 	const UECodeGen_Private::FMapPropertyParams Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_SpecialActionKeyToParamsMap = { "SpecialActionKeyToParamsMap", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamStep, SpecialActionKeyToParamsMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_SpecialActionKeyToParamsMap_MetaData), Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_SpecialActionKeyToParamsMap_MetaData) }; // 4191627935
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_Chops_Inner = { "Chops", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FJamChop, METADATA_PARAMS(0, nullptr) }; // 2783798267
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_Chops_Inner = { "Chops", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FJamChop, METADATA_PARAMS(0, nullptr) }; // 3958894928
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_Chops_MetaData[] = {
 		{ "Category", "JamStep" },
 		{ "ModuleRelativePath", "JamRecipe.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_Chops = { "Chops", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamStep, Chops), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_Chops_MetaData), Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_Chops_MetaData) }; // 2783798267
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_Chops = { "Chops", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamStep, Chops), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_Chops_MetaData), Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_Chops_MetaData) }; // 3958894928
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_Minces_Inner = { "Minces", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FJamMince, METADATA_PARAMS(0, nullptr) }; // 1499527420
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamStep_Statics::NewProp_Minces_MetaData[] = {
@@ -892,6 +906,16 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeCookOverviewParams>(
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DefaultBoard_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_DefaultBoard;
+		static const UECodeGen_Private::FClassPropertyParams NewProp_LayerToCustomBoard_ValueProp;
+		static const UECodeGen_Private::FIntPropertyParams NewProp_LayerToCustomBoard_Key_KeyProp;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_LayerToCustomBoard_MetaData[];
+#endif
+		static const UECodeGen_Private::FMapPropertyParams NewProp_LayerToCustomBoard;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CookColor_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_CookColor;
@@ -917,6 +941,22 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeCookOverviewParams>(
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FJamRecipeCookOverviewParams>();
 	}
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_DefaultBoard_MetaData[] = {
+		{ "Category", "JamRecipeCookOverviewParams" },
+		{ "ModuleRelativePath", "JamRecipe.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_DefaultBoard = { "DefaultBoard", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamRecipeCookOverviewParams, DefaultBoard), Z_Construct_UClass_UClass, Z_Construct_UClass_AJamCookBoard_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_DefaultBoard_MetaData), Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_DefaultBoard_MetaData) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_LayerToCustomBoard_ValueProp = { "LayerToCustomBoard", nullptr, (EPropertyFlags)0x0004000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UClass_UClass, Z_Construct_UClass_AJamCookBoard_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_LayerToCustomBoard_Key_KeyProp = { "LayerToCustomBoard_Key", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_LayerToCustomBoard_MetaData[] = {
+		{ "Category", "JamRecipeCookOverviewParams" },
+		{ "ModuleRelativePath", "JamRecipe.h" },
+	};
+#endif
+	const UECodeGen_Private::FMapPropertyParams Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_LayerToCustomBoard = { "LayerToCustomBoard", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamRecipeCookOverviewParams, LayerToCustomBoard), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_LayerToCustomBoard_MetaData), Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_LayerToCustomBoard_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_CookColor_MetaData[] = {
 		{ "Category", "JamRecipeCookOverviewParams" },
 		{ "ModuleRelativePath", "JamRecipe.h" },
@@ -938,6 +978,10 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeCookOverviewParams>(
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_MinceColor = { "MinceColor", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamRecipeCookOverviewParams, MinceColor), Z_Construct_UScriptStruct_FColor, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_MinceColor_MetaData), Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_MinceColor_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_DefaultBoard,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_LayerToCustomBoard_ValueProp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_LayerToCustomBoard_Key_KeyProp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_LayerToCustomBoard,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_CookColor,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_ChopColor,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewProp_MinceColor,
@@ -983,10 +1027,11 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeCookOverview>()
 		static const UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
 #endif
 		static void* NewStructOps();
+		static const UECodeGen_Private::FClassPropertyParams NewProp_BoardClasses_Inner;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_LayerCount_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BoardClasses_MetaData[];
 #endif
-		static const UECodeGen_Private::FIntPropertyParams NewProp_LayerCount;
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_BoardClasses;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CookColor_MetaData[];
 #endif
@@ -1012,13 +1057,14 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeCookOverview>()
 	{
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FJamRecipeCookOverview>();
 	}
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_BoardClasses_Inner = { "BoardClasses", nullptr, (EPropertyFlags)0x0004000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UClass, Z_Construct_UClass_AJamCookBoard_NoRegister, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_LayerCount_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_BoardClasses_MetaData[] = {
 		{ "Category", "JamRecipeCookOverview" },
 		{ "ModuleRelativePath", "JamRecipe.h" },
 	};
 #endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_LayerCount = { "LayerCount", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamRecipeCookOverview, LayerCount), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_LayerCount_MetaData), Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_LayerCount_MetaData) };
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_BoardClasses = { "BoardClasses", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamRecipeCookOverview, BoardClasses), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_BoardClasses_MetaData), Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_BoardClasses_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_CookColor_MetaData[] = {
 		{ "Category", "JamRecipeCookOverview" },
@@ -1041,7 +1087,8 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeCookOverview>()
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_MinceColor = { "MinceColor", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamRecipeCookOverview, MinceColor), Z_Construct_UScriptStruct_FColor, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_MinceColor_MetaData), Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_MinceColor_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_LayerCount,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_BoardClasses_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_BoardClasses,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_CookColor,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_ChopColor,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewProp_MinceColor,
@@ -1128,7 +1175,7 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeOverview>()
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_VolumeRatioMax = { "VolumeRatioMax", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamRecipeOverview, VolumeRatioMax), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_VolumeRatioMax_MetaData), Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_VolumeRatioMax_MetaData) };
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_CookNameToOverviewMap_ValueProp = { "CookNameToOverviewMap", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FJamRecipeCookOverview, METADATA_PARAMS(0, nullptr) }; // 2248752724
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_CookNameToOverviewMap_ValueProp = { "CookNameToOverviewMap", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FJamRecipeCookOverview, METADATA_PARAMS(0, nullptr) }; // 3687189747
 	const UECodeGen_Private::FNamePropertyParams Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_CookNameToOverviewMap_Key_KeyProp = { "CookNameToOverviewMap_Key", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_CookNameToOverviewMap_MetaData[] = {
@@ -1136,7 +1183,7 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeOverview>()
 		{ "ModuleRelativePath", "JamRecipe.h" },
 	};
 #endif
-	const UECodeGen_Private::FMapPropertyParams Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_CookNameToOverviewMap = { "CookNameToOverviewMap", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamRecipeOverview, CookNameToOverviewMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_CookNameToOverviewMap_MetaData), Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_CookNameToOverviewMap_MetaData) }; // 2248752724
+	const UECodeGen_Private::FMapPropertyParams Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_CookNameToOverviewMap = { "CookNameToOverviewMap", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FJamRecipeOverview, CookNameToOverviewMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_CookNameToOverviewMap_MetaData), Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_CookNameToOverviewMap_MetaData) }; // 3687189747
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_LastMeasure,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewProp_VolumeRatioMax,
@@ -1194,7 +1241,7 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeOverview>()
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UJamRecipe_GetOverview_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(JamRecipe_eventGetOverview_Parms, ReturnValue), Z_Construct_UScriptStruct_FJamRecipeOverview, METADATA_PARAMS(0, nullptr) }; // 598389494
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UJamRecipe_GetOverview_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(JamRecipe_eventGetOverview_Parms, ReturnValue), Z_Construct_UScriptStruct_FJamRecipeOverview, METADATA_PARAMS(0, nullptr) }; // 1106486247
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UJamRecipe_GetOverview_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UJamRecipe_GetOverview_Statics::NewProp_ReturnValue,
 	};
@@ -1264,7 +1311,7 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeOverview>()
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UJamRecipe_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UJamRecipe_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UJamRecipe_GetOverview, "GetOverview" }, // 2774044123
+		{ &Z_Construct_UFunction_UJamRecipe_GetOverview, "GetOverview" }, // 1430890461
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UJamRecipe_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -1306,7 +1353,7 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeOverview>()
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UJamRecipe_Statics::NewProp_TimeSignature = { "TimeSignature", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamRecipe, TimeSignature), Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamRecipe_Statics::NewProp_TimeSignature_MetaData), Z_Construct_UClass_UJamRecipe_Statics::NewProp_TimeSignature_MetaData) };
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UJamRecipe_Statics::NewProp_CookNameToOverviewParamsMap_ValueProp = { "CookNameToOverviewParamsMap", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams, METADATA_PARAMS(0, nullptr) }; // 1720806845
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UJamRecipe_Statics::NewProp_CookNameToOverviewParamsMap_ValueProp = { "CookNameToOverviewParamsMap", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams, METADATA_PARAMS(0, nullptr) }; // 904702186
 	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_UJamRecipe_Statics::NewProp_CookNameToOverviewParamsMap_Key_KeyProp = { "CookNameToOverviewParamsMap_Key", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamRecipe_Statics::NewProp_CookNameToOverviewParamsMap_MetaData[] = {
@@ -1314,15 +1361,15 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeOverview>()
 		{ "ModuleRelativePath", "JamRecipe.h" },
 	};
 #endif
-	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UJamRecipe_Statics::NewProp_CookNameToOverviewParamsMap = { "CookNameToOverviewParamsMap", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamRecipe, CookNameToOverviewParamsMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamRecipe_Statics::NewProp_CookNameToOverviewParamsMap_MetaData), Z_Construct_UClass_UJamRecipe_Statics::NewProp_CookNameToOverviewParamsMap_MetaData) }; // 1720806845
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UJamRecipe_Statics::NewProp_Steps_Inner = { "Steps", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FJamStep, METADATA_PARAMS(0, nullptr) }; // 3864634599
+	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UJamRecipe_Statics::NewProp_CookNameToOverviewParamsMap = { "CookNameToOverviewParamsMap", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamRecipe, CookNameToOverviewParamsMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamRecipe_Statics::NewProp_CookNameToOverviewParamsMap_MetaData), Z_Construct_UClass_UJamRecipe_Statics::NewProp_CookNameToOverviewParamsMap_MetaData) }; // 904702186
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UJamRecipe_Statics::NewProp_Steps_Inner = { "Steps", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FJamStep, METADATA_PARAMS(0, nullptr) }; // 1753942080
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamRecipe_Statics::NewProp_Steps_MetaData[] = {
 		{ "Category", "JamRecipe" },
 		{ "ModuleRelativePath", "JamRecipe.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UJamRecipe_Statics::NewProp_Steps = { "Steps", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamRecipe, Steps), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamRecipe_Statics::NewProp_Steps_MetaData), Z_Construct_UClass_UJamRecipe_Statics::NewProp_Steps_MetaData) }; // 3864634599
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UJamRecipe_Statics::NewProp_Steps = { "Steps", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamRecipe, Steps), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamRecipe_Statics::NewProp_Steps_MetaData), Z_Construct_UClass_UJamRecipe_Statics::NewProp_Steps_MetaData) }; // 1753942080
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UJamRecipe_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamRecipe_Statics::NewProp_VolumeDecibelCenter,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamRecipe_Statics::NewProp_VolumeRatioStart,
@@ -1379,19 +1426,19 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<FJamRecipeOverview>()
 	};
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_Statics::ScriptStructInfo[] = {
 		{ FJamChopSpecialActionParams::StaticStruct, Z_Construct_UScriptStruct_FJamChopSpecialActionParams_Statics::NewStructOps, TEXT("JamChopSpecialActionParams"), &Z_Registration_Info_UScriptStruct_JamChopSpecialActionParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamChopSpecialActionParams), 3057211773U) },
-		{ FJamChop::StaticStruct, Z_Construct_UScriptStruct_FJamChop_Statics::NewStructOps, TEXT("JamChop"), &Z_Registration_Info_UScriptStruct_JamChop, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamChop), 2783798267U) },
+		{ FJamChop::StaticStruct, Z_Construct_UScriptStruct_FJamChop_Statics::NewStructOps, TEXT("JamChop"), &Z_Registration_Info_UScriptStruct_JamChop, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamChop), 3958894928U) },
 		{ FJamMinceSpecialActionParams::StaticStruct, Z_Construct_UScriptStruct_FJamMinceSpecialActionParams_Statics::NewStructOps, TEXT("JamMinceSpecialActionParams"), &Z_Registration_Info_UScriptStruct_JamMinceSpecialActionParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamMinceSpecialActionParams), 3072376338U) },
 		{ FJamMince::StaticStruct, Z_Construct_UScriptStruct_FJamMince_Statics::NewStructOps, TEXT("JamMince"), &Z_Registration_Info_UScriptStruct_JamMince, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamMince), 1499527420U) },
 		{ FJamStepSpecialActionParams::StaticStruct, Z_Construct_UScriptStruct_FJamStepSpecialActionParams_Statics::NewStructOps, TEXT("JamStepSpecialActionParams"), &Z_Registration_Info_UScriptStruct_JamStepSpecialActionParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamStepSpecialActionParams), 4191627935U) },
-		{ FJamStep::StaticStruct, Z_Construct_UScriptStruct_FJamStep_Statics::NewStructOps, TEXT("JamStep"), &Z_Registration_Info_UScriptStruct_JamStep, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamStep), 3864634599U) },
-		{ FJamRecipeCookOverviewParams::StaticStruct, Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewStructOps, TEXT("JamRecipeCookOverviewParams"), &Z_Registration_Info_UScriptStruct_JamRecipeCookOverviewParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamRecipeCookOverviewParams), 1720806845U) },
-		{ FJamRecipeCookOverview::StaticStruct, Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewStructOps, TEXT("JamRecipeCookOverview"), &Z_Registration_Info_UScriptStruct_JamRecipeCookOverview, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamRecipeCookOverview), 2248752724U) },
-		{ FJamRecipeOverview::StaticStruct, Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewStructOps, TEXT("JamRecipeOverview"), &Z_Registration_Info_UScriptStruct_JamRecipeOverview, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamRecipeOverview), 598389494U) },
+		{ FJamStep::StaticStruct, Z_Construct_UScriptStruct_FJamStep_Statics::NewStructOps, TEXT("JamStep"), &Z_Registration_Info_UScriptStruct_JamStep, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamStep), 1753942080U) },
+		{ FJamRecipeCookOverviewParams::StaticStruct, Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics::NewStructOps, TEXT("JamRecipeCookOverviewParams"), &Z_Registration_Info_UScriptStruct_JamRecipeCookOverviewParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamRecipeCookOverviewParams), 904702186U) },
+		{ FJamRecipeCookOverview::StaticStruct, Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics::NewStructOps, TEXT("JamRecipeCookOverview"), &Z_Registration_Info_UScriptStruct_JamRecipeCookOverview, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamRecipeCookOverview), 3687189747U) },
+		{ FJamRecipeOverview::StaticStruct, Z_Construct_UScriptStruct_FJamRecipeOverview_Statics::NewStructOps, TEXT("JamRecipeOverview"), &Z_Registration_Info_UScriptStruct_JamRecipeOverview, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJamRecipeOverview), 1106486247U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UJamRecipe, UJamRecipe::StaticClass, TEXT("UJamRecipe"), &Z_Registration_Info_UClass_UJamRecipe, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UJamRecipe), 3651528464U) },
+		{ Z_Construct_UClass_UJamRecipe, UJamRecipe::StaticClass, TEXT("UJamRecipe"), &Z_Registration_Info_UClass_UJamRecipe, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UJamRecipe), 253767674U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_4222245065(TEXT("/Script/FamJam"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_1273041398(TEXT("/Script/FamJam"),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_Statics::ScriptStructInfo),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_Statics::EnumInfo));

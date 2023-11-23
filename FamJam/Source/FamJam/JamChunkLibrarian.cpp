@@ -33,36 +33,37 @@ bool UJamChunkLibrarian::CheckIsLibraryComplete()
 
 	bool bDoesLibraryHaveErrors = true;
 
-	TArray<FJamChunk*> Chunks;
-	Library->GetAllRows("", Chunks);
+	TArray<FJamChunkLibraryRow*> ChunkLibraryRows;
+	Library->GetAllRows("", ChunkLibraryRows);
 
 	int ChunkIdx = -1;
-	for (FJamChunk* Chunk : Chunks)
+	for (FJamChunkLibraryRow* ChunkLibraryRow : ChunkLibraryRows)
 	{
+		FJamChunk Chunk = ChunkLibraryRow->Chunk;
 		ChunkIdx++;
 
 		bool bIsChunkComplete = true;
 		FString debugString = "Chunk_" + FString::FromInt(ChunkIdx) + " is not fully setup: ";
 
-		if (Chunk->Sound == nullptr)
+		if (Chunk.Sound == nullptr)
 		{
 			bIsChunkComplete = false;
 			debugString += "SoundData is null ~ ";
 		}
-		if (Chunk->Tempo <= 0.0f)
+		if (Chunk.Tempo <= 0.0f)
 		{
 			bIsChunkComplete = false;
-			debugString += "Tempo is " + FString::SanitizeFloat(Chunk->Tempo) + " ~ ";
+			debugString += "Tempo is " + FString::SanitizeFloat(Chunk.Tempo) + " ~ ";
 		}
-		if (Chunk->MeasuresCount <= 0)
+		if (Chunk.MeasuresCount <= 0)
 		{
 			bIsChunkComplete = false;
-			debugString += "NumOfMeasures is " + FString::FromInt(Chunk->MeasuresCount) + " ~ ";
+			debugString += "NumOfMeasures is " + FString::FromInt(Chunk.MeasuresCount) + " ~ ";
 		}
-		if (Chunk->TimeSignature == FVector2D(0, 0))
+		if (Chunk.TimeSignature == FVector2D(0, 0))
 		{
 			bIsChunkComplete = false;
-			debugString += "TimeSignature is (" + FString::SanitizeFloat(Chunk->TimeSignature.X) + ", " + FString::SanitizeFloat(Chunk->TimeSignature.Y) + ") ~ ";
+			debugString += "TimeSignature is (" + FString::SanitizeFloat(Chunk.TimeSignature.X) + ", " + FString::SanitizeFloat(Chunk.TimeSignature.Y) + ") ~ ";
 		}
 
 		if (!bIsChunkComplete)
@@ -82,5 +83,12 @@ void UJamChunkLibrarian::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// ...
+}
+
+
+
+FJamChunkLibraryRow* UJamChunkLibrarian::GetRow(FName Name)
+{
+	return Library->FindRow<FJamChunkLibraryRow>(Name, "Chunk");
 }
 

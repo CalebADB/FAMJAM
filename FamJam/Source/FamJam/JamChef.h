@@ -7,6 +7,8 @@
 
 #include "JamCook.h"
 
+#include "Kismet/GameplayStatics.h"
+
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "JamChef.generated.h"
@@ -46,11 +48,13 @@ public:
 	bool bShouldInitializeJamVisualizer = false;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	float Time;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	int StepIdx;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	float MeasureRemaining;
+	float MeasureIdx;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int NextStepIdx;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float NextStepMeasureIdx;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	float Tempo;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -59,9 +63,6 @@ public:
 	EJamKey Key;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	float VolumeRatio;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	TArray<int> StepChopIdxsOrdered;
 
 public:
 	// Sets default values for this component's properties
@@ -82,4 +83,5 @@ public:
 	void FinishJam();
 private:
 	void ConductCooks(float DeltaTime);
+	void CallChops(float StepMeasureIdx, FJamStep Step);
 };

@@ -71,17 +71,21 @@ void EmptyLinkFunctionForGeneratedCodeJamChef() {}
 		static void NewProp_bShouldInitializeJamVisualizer_SetBit(void* Obj);
 		static const UECodeGen_Private::FBoolPropertyParams NewProp_bShouldInitializeJamVisualizer;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Time_MetaData[];
-#endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_Time;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_StepIdx_MetaData[];
 #endif
 		static const UECodeGen_Private::FIntPropertyParams NewProp_StepIdx;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_MeasureRemaining_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MeasureIdx_MetaData[];
 #endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_MeasureRemaining;
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_MeasureIdx;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_NextStepIdx_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_NextStepIdx;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_NextStepMeasureIdx_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_NextStepMeasureIdx;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Tempo_MetaData[];
 #endif
@@ -99,11 +103,6 @@ void EmptyLinkFunctionForGeneratedCodeJamChef() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_VolumeRatio_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_VolumeRatio;
-		static const UECodeGen_Private::FIntPropertyParams NewProp_StepChopIdxsOrdered_Inner;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_StepChopIdxsOrdered_MetaData[];
-#endif
-		static const UECodeGen_Private::FArrayPropertyParams NewProp_StepChopIdxsOrdered;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -152,7 +151,7 @@ void EmptyLinkFunctionForGeneratedCodeJamChef() {}
 		{ "ModuleRelativePath", "JamChef.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_RecipeOverview = { "RecipeOverview", nullptr, (EPropertyFlags)0x0010000000020005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, RecipeOverview), Z_Construct_UScriptStruct_FJamRecipeOverview, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::NewProp_RecipeOverview_MetaData), Z_Construct_UClass_UJamChef_Statics::NewProp_RecipeOverview_MetaData) }; // 598389494
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_RecipeOverview = { "RecipeOverview", nullptr, (EPropertyFlags)0x0010000000020005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, RecipeOverview), Z_Construct_UScriptStruct_FJamRecipeOverview, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::NewProp_RecipeOverview_MetaData), Z_Construct_UClass_UJamChef_Statics::NewProp_RecipeOverview_MetaData) }; // 1106486247
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamChef_Statics::NewProp_bShouldAttemptToReadRecipe_MetaData[] = {
 		{ "Category", "JamChef" },
@@ -198,13 +197,6 @@ void EmptyLinkFunctionForGeneratedCodeJamChef() {}
 	}
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_bShouldInitializeJamVisualizer = { "bShouldInitializeJamVisualizer", nullptr, (EPropertyFlags)0x0010000000020005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UJamChef), &Z_Construct_UClass_UJamChef_Statics::NewProp_bShouldInitializeJamVisualizer_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::NewProp_bShouldInitializeJamVisualizer_MetaData), Z_Construct_UClass_UJamChef_Statics::NewProp_bShouldInitializeJamVisualizer_MetaData) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamChef_Statics::NewProp_Time_MetaData[] = {
-		{ "Category", "JamChef" },
-		{ "ModuleRelativePath", "JamChef.h" },
-	};
-#endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_Time = { "Time", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, Time), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::NewProp_Time_MetaData), Z_Construct_UClass_UJamChef_Statics::NewProp_Time_MetaData) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamChef_Statics::NewProp_StepIdx_MetaData[] = {
 		{ "Category", "JamChef" },
 		{ "ModuleRelativePath", "JamChef.h" },
@@ -212,12 +204,26 @@ void EmptyLinkFunctionForGeneratedCodeJamChef() {}
 #endif
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_StepIdx = { "StepIdx", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, StepIdx), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::NewProp_StepIdx_MetaData), Z_Construct_UClass_UJamChef_Statics::NewProp_StepIdx_MetaData) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamChef_Statics::NewProp_MeasureRemaining_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamChef_Statics::NewProp_MeasureIdx_MetaData[] = {
 		{ "Category", "JamChef" },
 		{ "ModuleRelativePath", "JamChef.h" },
 	};
 #endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_MeasureRemaining = { "MeasureRemaining", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, MeasureRemaining), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::NewProp_MeasureRemaining_MetaData), Z_Construct_UClass_UJamChef_Statics::NewProp_MeasureRemaining_MetaData) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_MeasureIdx = { "MeasureIdx", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, MeasureIdx), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::NewProp_MeasureIdx_MetaData), Z_Construct_UClass_UJamChef_Statics::NewProp_MeasureIdx_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamChef_Statics::NewProp_NextStepIdx_MetaData[] = {
+		{ "Category", "JamChef" },
+		{ "ModuleRelativePath", "JamChef.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_NextStepIdx = { "NextStepIdx", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, NextStepIdx), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::NewProp_NextStepIdx_MetaData), Z_Construct_UClass_UJamChef_Statics::NewProp_NextStepIdx_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamChef_Statics::NewProp_NextStepMeasureIdx_MetaData[] = {
+		{ "Category", "JamChef" },
+		{ "ModuleRelativePath", "JamChef.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_NextStepMeasureIdx = { "NextStepMeasureIdx", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, NextStepMeasureIdx), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::NewProp_NextStepMeasureIdx_MetaData), Z_Construct_UClass_UJamChef_Statics::NewProp_NextStepMeasureIdx_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamChef_Statics::NewProp_Tempo_MetaData[] = {
 		{ "Category", "JamChef" },
@@ -247,14 +253,6 @@ void EmptyLinkFunctionForGeneratedCodeJamChef() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_VolumeRatio = { "VolumeRatio", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, VolumeRatio), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::NewProp_VolumeRatio_MetaData), Z_Construct_UClass_UJamChef_Statics::NewProp_VolumeRatio_MetaData) };
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_StepChopIdxsOrdered_Inner = { "StepChopIdxsOrdered", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UJamChef_Statics::NewProp_StepChopIdxsOrdered_MetaData[] = {
-		{ "Category", "JamChef" },
-		{ "ModuleRelativePath", "JamChef.h" },
-	};
-#endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_StepChopIdxsOrdered = { "StepChopIdxsOrdered", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, StepChopIdxsOrdered), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::NewProp_StepChopIdxsOrdered_MetaData), Z_Construct_UClass_UJamChef_Statics::NewProp_StepChopIdxsOrdered_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UJamChef_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_bIsMiseEnPlace,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_TargetRecipeIndexName,
@@ -264,16 +262,15 @@ void EmptyLinkFunctionForGeneratedCodeJamChef() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_bIsReadingRecipe,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_bShouldVisualizeJam,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_bShouldInitializeJamVisualizer,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_Time,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_StepIdx,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_MeasureRemaining,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_MeasureIdx,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_NextStepIdx,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_NextStepMeasureIdx,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_Tempo,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_TimeSignature,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_Key_Underlying,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_Key,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_VolumeRatio,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_StepChopIdxsOrdered_Inner,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_StepChopIdxsOrdered,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UJamChef_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UJamChef>::IsAbstract,
@@ -313,9 +310,9 @@ void EmptyLinkFunctionForGeneratedCodeJamChef() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChef_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UJamChef, UJamChef::StaticClass, TEXT("UJamChef"), &Z_Registration_Info_UClass_UJamChef, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UJamChef), 2594507742U) },
+		{ Z_Construct_UClass_UJamChef, UJamChef::StaticClass, TEXT("UJamChef"), &Z_Registration_Info_UClass_UJamChef, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UJamChef), 2407737955U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChef_h_1650630312(TEXT("/Script/FamJam"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChef_h_2004101805(TEXT("/Script/FamJam"),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChef_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamChef_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

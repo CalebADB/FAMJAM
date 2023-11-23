@@ -15,79 +15,79 @@ struct FJamRecipeOverview;
 #endif
 #define FAMJAM_JamRecipe_generated_h
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_20_GENERATED_BODY \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_21_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamChopSpecialActionParams_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamChopSpecialActionParams>();
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_38_GENERATED_BODY \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_39_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamChop_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamChop>();
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_60_GENERATED_BODY \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_64_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamMinceSpecialActionParams_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamMinceSpecialActionParams>();
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_78_GENERATED_BODY \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_82_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamMince_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamMince>();
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_93_GENERATED_BODY \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_97_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamStepSpecialActionParams_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamStepSpecialActionParams>();
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_115_GENERATED_BODY \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_119_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamStep_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamStep>();
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_133_GENERATED_BODY \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_137_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamRecipeCookOverviewParams>();
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_147_GENERATED_BODY \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_156_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamRecipeCookOverview>();
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_164_GENERATED_BODY \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_173_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamRecipeOverview_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamRecipeOverview>();
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_SPARSE_DATA
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_SPARSE_DATA
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execGetOverview);
 
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_ACCESSORS
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_INCLASS_NO_PURE_DECLS \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_ACCESSORS
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUJamRecipe(); \
 	friend struct Z_Construct_UClass_UJamRecipe_Statics; \
@@ -96,7 +96,7 @@ public: \
 	DECLARE_SERIALIZER(UJamRecipe)
 
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_ENHANCED_CONSTRUCTORS \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UJamRecipe(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -110,17 +110,17 @@ public: \
 	NO_API virtual ~UJamRecipe();
 
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_179_PROLOG
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_GENERATED_BODY \
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_188_PROLOG
+#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_SPARSE_DATA \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_ACCESSORS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_INCLASS_NO_PURE_DECLS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_182_ENHANCED_CONSTRUCTORS \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_SPARSE_DATA \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_ACCESSORS \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_INCLASS_NO_PURE_DECLS \
+	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

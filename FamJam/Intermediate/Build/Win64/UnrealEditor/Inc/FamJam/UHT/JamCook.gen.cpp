@@ -6,13 +6,18 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "FamJam/JamCook.h"
+#include "FamJam/JamChunkLibrarian.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeJamCook() {}
 // Cross Module References
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	FAMJAM_API UClass* Z_Construct_UClass_AJamCook();
 	FAMJAM_API UClass* Z_Construct_UClass_AJamCook_NoRegister();
-	FAMJAM_API UClass* Z_Construct_UClass_UJamCookAudioLayer_NoRegister();
+	FAMJAM_API UClass* Z_Construct_UClass_AJamCookBoard_NoRegister();
+	FAMJAM_API UClass* Z_Construct_UClass_AJamCookMind_NoRegister();
+	FAMJAM_API UClass* Z_Construct_UClass_UJamChunkLibrarian_NoRegister();
+	FAMJAM_API UScriptStruct* Z_Construct_UScriptStruct_FJamChunk();
 	UPackage* Z_Construct_UPackage__Script_FamJam();
 // End Cross Module References
 	void AJamCook::StaticRegisterNativesAJamCook()
@@ -29,11 +34,37 @@ void EmptyLinkFunctionForGeneratedCodeJamCook() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_AudioLayers_Inner;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_AudioLayers_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_bIsMiseEnPlace_MetaData[];
 #endif
-		static const UECodeGen_Private::FArrayPropertyParams NewProp_AudioLayers;
+		static void NewProp_bIsMiseEnPlace_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsMiseEnPlace;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_JamName_MetaData[];
+#endif
+		static const UECodeGen_Private::FNamePropertyParams NewProp_JamName;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MindClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_MindClass;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Mind_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Mind;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ChunkLibrarian_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ChunkLibrarian;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Chunks_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Chunks_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_Chunks;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Boards_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Boards_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_Boards;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -49,18 +80,72 @@ void EmptyLinkFunctionForGeneratedCodeJamCook() {}
 		{ "ModuleRelativePath", "JamCook.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AJamCook_Statics::NewProp_AudioLayers_Inner = { "AudioLayers", nullptr, (EPropertyFlags)0x00000000000a0008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UJamCookAudioLayer_NoRegister, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AJamCook_Statics::NewProp_AudioLayers_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AJamCook_Statics::NewProp_bIsMiseEnPlace_MetaData[] = {
+		{ "Category", "JamCook" },
+		{ "ModuleRelativePath", "JamCook.h" },
+	};
+#endif
+	void Z_Construct_UClass_AJamCook_Statics::NewProp_bIsMiseEnPlace_SetBit(void* Obj)
+	{
+		((AJamCook*)Obj)->bIsMiseEnPlace = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AJamCook_Statics::NewProp_bIsMiseEnPlace = { "bIsMiseEnPlace", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AJamCook), &Z_Construct_UClass_AJamCook_Statics::NewProp_bIsMiseEnPlace_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AJamCook_Statics::NewProp_bIsMiseEnPlace_MetaData), Z_Construct_UClass_AJamCook_Statics::NewProp_bIsMiseEnPlace_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AJamCook_Statics::NewProp_JamName_MetaData[] = {
+		{ "Category", "JamCook" },
+		{ "ModuleRelativePath", "JamCook.h" },
+	};
+#endif
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AJamCook_Statics::NewProp_JamName = { "JamName", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AJamCook, JamName), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AJamCook_Statics::NewProp_JamName_MetaData), Z_Construct_UClass_AJamCook_Statics::NewProp_JamName_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AJamCook_Statics::NewProp_MindClass_MetaData[] = {
+		{ "Category", "JamCook" },
+		{ "ModuleRelativePath", "JamCook.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AJamCook_Statics::NewProp_MindClass = { "MindClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AJamCook, MindClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AJamCookMind_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AJamCook_Statics::NewProp_MindClass_MetaData), Z_Construct_UClass_AJamCook_Statics::NewProp_MindClass_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AJamCook_Statics::NewProp_Mind_MetaData[] = {
+		{ "Category", "JamCook" },
+		{ "ModuleRelativePath", "JamCook.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AJamCook_Statics::NewProp_Mind = { "Mind", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AJamCook, Mind), Z_Construct_UClass_AJamCookMind_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AJamCook_Statics::NewProp_Mind_MetaData), Z_Construct_UClass_AJamCook_Statics::NewProp_Mind_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AJamCook_Statics::NewProp_ChunkLibrarian_MetaData[] = {
 		{ "Category", "JamCook" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "JamCook.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AJamCook_Statics::NewProp_AudioLayers = { "AudioLayers", nullptr, (EPropertyFlags)0x0010008000020009, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AJamCook, AudioLayers), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AJamCook_Statics::NewProp_AudioLayers_MetaData), Z_Construct_UClass_AJamCook_Statics::NewProp_AudioLayers_MetaData) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AJamCook_Statics::NewProp_ChunkLibrarian = { "ChunkLibrarian", nullptr, (EPropertyFlags)0x00100000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AJamCook, ChunkLibrarian), Z_Construct_UClass_UJamChunkLibrarian_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AJamCook_Statics::NewProp_ChunkLibrarian_MetaData), Z_Construct_UClass_AJamCook_Statics::NewProp_ChunkLibrarian_MetaData) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AJamCook_Statics::NewProp_Chunks_Inner = { "Chunks", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FJamChunk, METADATA_PARAMS(0, nullptr) }; // 3451683250
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AJamCook_Statics::NewProp_Chunks_MetaData[] = {
+		{ "Category", "JamCook" },
+		{ "ModuleRelativePath", "JamCook.h" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AJamCook_Statics::NewProp_Chunks = { "Chunks", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AJamCook, Chunks), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AJamCook_Statics::NewProp_Chunks_MetaData), Z_Construct_UClass_AJamCook_Statics::NewProp_Chunks_MetaData) }; // 3451683250
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AJamCook_Statics::NewProp_Boards_Inner = { "Boards", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AJamCookBoard_NoRegister, METADATA_PARAMS(0, nullptr) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AJamCook_Statics::NewProp_Boards_MetaData[] = {
+		{ "Category", "JamCook" },
+		{ "ModuleRelativePath", "JamCook.h" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AJamCook_Statics::NewProp_Boards = { "Boards", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AJamCook, Boards), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AJamCook_Statics::NewProp_Boards_MetaData), Z_Construct_UClass_AJamCook_Statics::NewProp_Boards_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AJamCook_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJamCook_Statics::NewProp_AudioLayers_Inner,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJamCook_Statics::NewProp_AudioLayers,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJamCook_Statics::NewProp_bIsMiseEnPlace,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJamCook_Statics::NewProp_JamName,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJamCook_Statics::NewProp_MindClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJamCook_Statics::NewProp_Mind,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJamCook_Statics::NewProp_ChunkLibrarian,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJamCook_Statics::NewProp_Chunks_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJamCook_Statics::NewProp_Chunks,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJamCook_Statics::NewProp_Boards_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AJamCook_Statics::NewProp_Boards,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AJamCook_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AJamCook>::IsAbstract,
@@ -100,9 +185,9 @@ void EmptyLinkFunctionForGeneratedCodeJamCook() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamCook_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AJamCook, AJamCook::StaticClass, TEXT("AJamCook"), &Z_Registration_Info_UClass_AJamCook, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AJamCook), 1334988732U) },
+		{ Z_Construct_UClass_AJamCook, AJamCook::StaticClass, TEXT("AJamCook"), &Z_Registration_Info_UClass_AJamCook, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AJamCook), 1302005936U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamCook_h_4287139469(TEXT("/Script/FamJam"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamCook_h_2674223108(TEXT("/Script/FamJam"),
 		Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamCook_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamCook_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

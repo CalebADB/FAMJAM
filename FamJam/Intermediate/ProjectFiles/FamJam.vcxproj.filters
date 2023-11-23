@@ -69,6 +69,36 @@
     <ClInclude Include="..\..\Source\FamJam\JamCookAudioLayer.h">
       <Filter>Source\FamJam</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamCookBoard.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamCookBoard.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamCookMind.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamCookMind.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamCookMindVisualizer.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamCookMindVisualizer.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamCookTest.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamCookTest.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamCook_Bespoke.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamCook_Bespoke.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\FamJam\JamLibrarian.cpp">
       <Filter>Source\FamJam</Filter>
     </ClCompile>

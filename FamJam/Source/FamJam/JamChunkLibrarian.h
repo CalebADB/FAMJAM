@@ -63,6 +63,15 @@ struct FAMJAM_API FJamChunkIndex : public FTableRowBase
 	FJamChunk Chunk;
 };
 
+USTRUCT(BlueprintType)
+struct FAMJAM_API FJamChunkLibraryRow : public FTableRowBase
+{
+	GENERATED_USTRUCT_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FJamChunk Chunk;
+};
+
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class FAMJAM_API UJamChunkLibrarian : public UJamLibrarian
 {
@@ -82,5 +91,6 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	FJamChunkLibraryRow* GetRow(FName Name);
 
 };

@@ -44,16 +44,13 @@ FJamRecipeOverview UJamRecipe::GetOverview()
 				}
 			}
 
-			if (Overview.CookNameToOverviewMap.Contains(Chop.CookName))
+			if (CookNameToOverviewParamsMap.Contains(Chop.CookName))
 			{
-				if (Overview.CookNameToOverviewMap[Chop.CookName].LayerCount < Chop.CookLayerIdx) Overview.CookNameToOverviewMap[Chop.CookName].LayerCount = Chop.CookLayerIdx;
+				if (CookNameToOverviewParamsMap[Chop.CookName].LayerCountMax < Chop.CookLayerIdx) CookNameToOverviewParamsMap[Chop.CookName].LayerCountMax = Chop.CookLayerIdx;
 			}
 			else
 			{
-				FJamRecipeCookOverview CookOverview;
-				DebugAllCooksString += "Cook_" + Chop.CookName.ToString() + ", ";
-				CookOverview.LayerCount = Chop.CookLayerIdx;
-				Overview.CookNameToOverviewMap.Add(Chop.CookName, CookOverview);
+				UE_LOG(LogTemp, Error, TEXT("Cook_%s was not found in the recipe CookNameToOverviewParamsMap"), *Chop.CookName.ToString());
 			}
 		}
 		StepMeasureStart += Step.MeasuresCount;
@@ -61,13 +58,31 @@ FJamRecipeOverview UJamRecipe::GetOverview()
 
 	for (TPair<FName, FJamRecipeCookOverviewParams> CookNameToOverviewParams : CookNameToOverviewParamsMap)
 	{
-		if (Overview.CookNameToOverviewMap.Contains(CookNameToOverviewParams.Key))
-		{
-			Overview.CookNameToOverviewMap[CookNameToOverviewParams.Key].CookColor = CookNameToOverviewParams.Value.CookColor;
-			Overview.CookNameToOverviewMap[CookNameToOverviewParams.Key].ChopColor = CookNameToOverviewParams.Value.ChopColor;
-			Overview.CookNameToOverviewMap[CookNameToOverviewParams.Key].MinceColor = CookNameToOverviewParams.Value.MinceColor;
+		if (CookNameToOverviewParams.Value.DefaultBoard == nullptr) 
+		{ 
+			UE_LOG(LogTemp, Error, TEXT("Cook_%s is missing a DefaultBoard in FJamRecipeCookOverviewParams"), *CookNameToOverviewParams.Key.ToString());
+			return FJamRecipeOverview();
 		}
-		else UE_LOG(LogTemp, Error, TEXT("The CookOverviewParams for Cook_%s were not found within the existing cooks: %s"), *CookNameToOverviewParams.Key.ToString(), *DebugAllCooksString)
+
+		FJamRecipeCookOverview CookOverview;
+		
+		CookOverview.CookColor = CookNameToOverviewParams.Value.CookColor;
+		CookOverview.ChopColor = CookNameToOverviewParams.Value.ChopColor;
+		CookOverview.MinceColor = CookNameToOverviewParams.Value.MinceColor;
+
+		for (int idx = 0; idx < CookNameToOverviewParams.Value.LayerCountMax; idx++)
+		{
+			if (CookNameToOverviewParams.Value.LayerToCustomBoard.Contains(idx))
+			{
+				CookOverview.BoardClasses.Add(CookNameToOverviewParams.Value.LayerToCustomBoard[idx]);
+			}
+			else
+			{
+				CookOverview.BoardClasses.Add(CookNameToOverviewParams.Value.DefaultBoard);
+			}
+		}
+
+		Overview.CookNameToOverviewMap.Add(CookNameToOverviewParams.Key, CookOverview);
 	}
 
 	return Overview;

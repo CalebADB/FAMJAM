@@ -3,11 +3,13 @@
 #pragma once
 
 #include "JamRecipe.h"
-#include "JamCookAudioLayer.h"
+#include "JamCookMind.h"
+#include "JamCookBoard.h"
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "JamCook.generated.h"
+
 
 UCLASS()
 class FAMJAM_API AJamCook : public AActor
@@ -16,7 +18,25 @@ class FAMJAM_API AJamCook : public AActor
 	
 public:
 	UPROPERTY(VisibleAnywhere)
-	TArray<UJamCookAudioLayer*> AudioLayers;
+	bool bIsMiseEnPlace = false;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	FName JamName;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<AJamCookMind> MindClass;
+	UPROPERTY(VisibleAnywhere)
+	AJamCookMind* Mind;
+
+	UPROPERTY(VisibleAnywhere)
+	UJamChunkLibrarian* ChunkLibrarian;
+
+	UPROPERTY(VisibleAnywhere)
+	TArray<FJamChunk> Chunks;
+	UPROPERTY(VisibleAnywhere)
+	TArray<AJamCookBoard*> Boards;
+	TMap<int, FJamChop> ChopIdToChopMap;
+	int NextChopId = 0;
 
 public:	
 	// Sets default values for this actor's properties
@@ -27,11 +47,13 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	void MiseEnPlace(int LayerCount);
+	void MiseEnPlace(UJamChunkLibrarian* InChunkLibrarian, TArray<TSubclassOf<AJamCookBoard>> BoardClasses);
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	void ReceiveCalledChop(float NextStepMeasureIdx, FJamChop Chop);
+	
+	void ProcessChops(float MeasureIdx, float Tempo);
 
-	//void QueueChop(int LayerIdx, FJamChunk Chunk, FJamChopSpecialActionParams SpecialActionParams);
+	// IDEA
+	// void CallProcessChops(float MeasureIdx, float Tempo);
+
 };
