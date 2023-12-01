@@ -26,8 +26,8 @@ C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\BuildRulesProject
 C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\BuildRulesProjects\FamJamModuleRules\obj\Development\FamJamModuleRules.AssemblyInfoInputs.cache
 C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\BuildRulesProjects\FamJamModuleRules\obj\Development\FamJamModuleRules.AssemblyInfo.cs
 C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\BuildRulesProjects\FamJamModuleRules\obj\Development\FamJamModuleRules.csproj.CoreCompileInputs.cache
+C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\BuildRulesProjects\FamJamModuleRules\obj\Development\FamJamModuleRules.sourcelink.json
 C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\BuildRulesProjects\FamJamModuleRules\obj\Development\FamJamModuleRules.csproj.CopyComplete
 C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\BuildRulesProjects\FamJamModuleRules\obj\Development\FamJamModuleRules.dll
 C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\BuildRulesProjects\FamJamModuleRules\obj\Development\refint\FamJamModuleRules.dll
 C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\BuildRulesProjects\FamJamModuleRules\obj\Development\FamJamModuleRules.pdb
-C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\BuildRulesProjects\FamJamModuleRules\obj\Development\FamJamModuleRules.sourcelink.json

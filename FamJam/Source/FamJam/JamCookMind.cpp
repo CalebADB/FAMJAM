@@ -25,16 +25,28 @@ void AJamCookMind::BeginPlay()
 	Triggers.Add(8, FJamCookTrigger());
 	Triggers.Add(9, FJamCookTrigger());
 	Triggers.Add(10, FJamCookTrigger());
+
+
+	if (bShouldVisualize)
+	{
+		if (VisualizerClass != nullptr)
+		{
+			Visualizer = GetWorld()->SpawnActor<AJamCookMindVisualizer>(VisualizerClass);
+			FAttachmentTransformRules AttachmentTransformRules = FAttachmentTransformRules(EAttachmentRule::KeepRelative, false);
+			Visualizer->AttachToActor(this, AttachmentTransformRules);
+			bIsVisualizing = true;
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("Visualizer class is nullptr. bShouldVisualize was set to false"));
+		}
+	}
 }
 
 // Called every frame
 void AJamCookMind::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (bShouldVisualize)
-	{
-		Visualizer->BlueprintTick(DeltaTime);
-	}
 }
 
 void AJamCookMind::Think(int ChopId, int TriggerId, float MeasureIdxHit)
@@ -54,11 +66,14 @@ void AJamCookMind::Think(int ChopId, int TriggerId, float MeasureIdxHit)
 	Thought.MeasureIdxForget = MeasureIdxHit + NerdSwagger;
 	Thought.MeasureIdxExtinct = MeasureIdxHit + NoSwagger;
 
-	Thoughts.Add(Thought);
+	if (bIsVisualizing) Visualizer->BlueprintAddThought(TriggerId, MeasureIdxHit);
+
+	Thoughts.Add(Thought);	
 }
 
 TArray<FJamCookFeeling> AJamCookMind::Feel(float MeasureIdx)
 {
+	if (bIsVisualizing) Visualizer->BlueprintTick(MeasureIdx);
 	TArray<FJamCookFeeling> Feelings;
 
 	TArray<int> DoneThoughtIdxs;

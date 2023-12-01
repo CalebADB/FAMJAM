@@ -92,8 +92,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TMap<int, FJamCookTrigger> Triggers;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	bool bShouldVisualize = false;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	bool bIsVisualizing = false;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AJamCookMindVisualizer> VisualizerClass;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

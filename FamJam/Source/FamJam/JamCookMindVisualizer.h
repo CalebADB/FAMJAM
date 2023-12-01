@@ -7,7 +7,7 @@
 #include "JamCookMindVisualizer.generated.h"
 
 UENUM(BlueprintType)
-enum class EJamCookThoughtEfficacy
+enum class EJamCookThoughtEfficacy : uint8
 {
 	Nope,
 	Bad,
@@ -16,6 +16,16 @@ enum class EJamCookThoughtEfficacy
 	Wow
 };
 
+UENUM(BlueprintType)
+enum class EJamCookThoughtVisualizerButtonType : uint8
+{
+	PS,
+	XB,
+	PC,
+	C1,
+	C2,
+	C3
+};
 
 UCLASS()
 class FAMJAM_API AJamCookMindVisualizer : public AActor
@@ -39,6 +49,4 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent)
 	void BlueprintAddFeeling(int TriggerId, EJamCookThoughtEfficacy Efficacy);
-
-
 };

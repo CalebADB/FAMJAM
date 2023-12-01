@@ -30,6 +30,7 @@ void AJamCook::MiseEnPlace(UJamChunkLibrarian* InChunkLibrarian, TArray<TSubclas
 		return;
 	}
 	Mind = GetWorld()->SpawnActor<AJamCookMind>(MindClass);
+	Mind->AttachToActor(this, AttachmentTransformRules);
 
 	for (TSubclassOf<AJamCookBoard> BoardClass : BoardClasses)
 	{
