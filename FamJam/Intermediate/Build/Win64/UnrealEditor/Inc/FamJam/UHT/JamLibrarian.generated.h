@@ -14,12 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FAMJAM_JamLibrarian_generated_h
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_SPARSE_DATA
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_ACCESSORS
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUJamLibrarian(); \
 	friend struct Z_Construct_UClass_UJamLibrarian_Statics; \
@@ -28,11 +23,11 @@ public: \
 	DECLARE_SERIALIZER(UJamLibrarian)
 
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
-	NO_API UJamLibrarian(UJamLibrarian&&); \
-	NO_API UJamLibrarian(const UJamLibrarian&); \
+	UJamLibrarian(UJamLibrarian&&); \
+	UJamLibrarian(const UJamLibrarian&); \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UJamLibrarian); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UJamLibrarian); \
@@ -40,17 +35,12 @@ public: \
 	NO_API virtual ~UJamLibrarian();
 
 
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_10_PROLOG
-#define FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_GENERATED_BODY \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_10_PROLOG
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_SPARSE_DATA \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_ACCESSORS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_INCLASS_NO_PURE_DECLS \
-	FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_ENHANCED_CONSTRUCTORS \
+	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -58,7 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> FAMJAM_API UClass* StaticClass<class UJamLibrarian>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_TN_2019_Desktop_Work_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h
+#define CURRENT_FILE_ID FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamLibrarian_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

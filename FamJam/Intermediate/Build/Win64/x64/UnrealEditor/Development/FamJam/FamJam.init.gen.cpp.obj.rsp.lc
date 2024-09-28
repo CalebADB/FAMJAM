@@ -1,11 +1,11 @@
-"C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\Win64\UnrealEditor\Inc\FamJam\UHT\FamJam.init.gen.cpp"
-/FI"C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\Win64\x64\FamJamEditor\Development\Engine\SharedPCH.Engine.Cpp20.h"
-/FI"C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\Win64\x64\UnrealEditor\Development\FamJam\Definitions.FamJam.h"
-/Yu"C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\Win64\x64\FamJamEditor\Development\Engine\SharedPCH.Engine.Cpp20.h"
-/Fp"C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\Win64\x64\FamJamEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.pch"
-/Fo"C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\Win64\x64\UnrealEditor\Development\FamJam\FamJam.init.gen.cpp.lc.obj"
-/sourceDependencies"C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\Win64\x64\UnrealEditor\Development\FamJam\FamJam.init.gen.cpp.dep.lc.json"
-@"C:\Users\TN-2019\Desktop\Work\FAMJAM\FamJam\Intermediate\Build\Win64\x64\UnrealEditor\Development\FamJam\FamJam.Shared.rsp"
+"C:\Users\caleb\Documents\GitHub\FAMJAM\FamJam\Intermediate\Build\Win64\UnrealEditor\Inc\FamJam\UHT\FamJam.init.gen.cpp"
+/FI"C:\Users\caleb\Documents\GitHub\FAMJAM\FamJam\Intermediate\Build\Win64\x64\FamJamEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderUnreal5_3.h"
+/FI"C:\Users\caleb\Documents\GitHub\FAMJAM\FamJam\Intermediate\Build\Win64\x64\UnrealEditor\Development\FamJam\Definitions.FamJam.h"
+/Yu"C:\Users\caleb\Documents\GitHub\FAMJAM\FamJam\Intermediate\Build\Win64\x64\FamJamEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderUnreal5_3.h"
+/Fp"C:\Users\caleb\Documents\GitHub\FAMJAM\FamJam\Intermediate\Build\Win64\x64\FamJamEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.NoValFmtStr.ValApi.Cpp20.InclOrderUnreal5_3.h.pch"
+/Fo"C:\Users\caleb\Documents\GitHub\FAMJAM\FamJam\Intermediate\Build\Win64\x64\UnrealEditor\Development\FamJam\FamJam.init.gen.cpp.lc.obj"
+/sourceDependencies"C:\Users\caleb\Documents\GitHub\FAMJAM\FamJam\Intermediate\Build\Win64\x64\UnrealEditor\Development\FamJam\FamJam.init.gen.cpp.dep.lc.json"
+@"C:\Users\caleb\Documents\GitHub\FAMJAM\FamJam\Intermediate\Build\Win64\x64\UnrealEditor\Development\FamJam\FamJam.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi
@@ -24,6 +24,7 @@
 /D_WINDLL
 /D_DISABLE_EXTENDED_ALIGNED_STORAGE
 /Ob2
+/d2ExtendedWarningInfo
 /Ox
 /Ot
 /GF

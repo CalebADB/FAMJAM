@@ -9,7 +9,7 @@
 #include "JamChunkLibrarian.generated.h"
 
 UENUM(BlueprintType)
-enum class EJamKey
+enum class EJamKey : uint8
 {
 	None,
 	Gb,
@@ -27,7 +27,7 @@ enum class EJamKey
 };
 
 UENUM(BlueprintType)
-enum class EJamSoundCategory
+enum class EJamSoundCategory : uint8
 {
 	None,
 	Organ

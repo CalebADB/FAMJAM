@@ -47,6 +47,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	bool bShouldInitializeJamVisualizer = false;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	bool bIsVisualizingJam = false;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	int StepIdx;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)

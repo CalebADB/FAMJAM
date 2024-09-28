@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\TN-2019\\Desktop\\Work\\FAMJAM\\FamJam\\Source\\FamJam\\FamJam.Build.cs",
-		"C:\\Users\\TN-2019\\Desktop\\Work\\FAMJAM\\FamJam\\Source\\FamJam.Target.cs",
-		"C:\\Users\\TN-2019\\Desktop\\Work\\FAMJAM\\FamJam\\Source\\FamJamEditor.Target.cs"
+		"C:\\Users\\caleb\\Documents\\GitHub\\FAMJAM\\FamJam\\Source\\FamJam\\FamJam.Build.cs",
+		"C:\\Users\\caleb\\Documents\\GitHub\\FAMJAM\\FamJam\\Source\\FamJam.Target.cs",
+		"C:\\Users\\caleb\\Documents\\GitHub\\FAMJAM\\FamJam\\Source\\FamJamEditor.Target.cs"
 	],
-	"EngineVersion": "5.3.2"
+	"EngineVersion": "5.4.4"
 }

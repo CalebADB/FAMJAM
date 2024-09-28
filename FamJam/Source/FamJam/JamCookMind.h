@@ -10,7 +10,7 @@
 
 
 UENUM(BlueprintType)
-enum class EJamCookImpulse
+enum class EJamCookImpulse : uint8
 {
 	HitStart,
 	HitRelease

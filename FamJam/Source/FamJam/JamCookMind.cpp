@@ -104,40 +104,41 @@ TArray<FJamCookFeeling> AJamCookMind::Feel(float MeasureIdx)
 			// Check if a trigger was pressed
 			if (Triggers[Feeling.Thought.TriggerId].Impulses.Num() == 0)
 			{
-				// Remove Impulse from queue
-				EJamCookThoughtEfficacy Efficacy = EJamCookThoughtEfficacy::Nope;
-				if (Thought.MeasureIdxExist <= MeasureIdx && MeasureIdx < Thought.MeasureIdxWarm)
-				{
-					Efficacy = EJamCookThoughtEfficacy::Bad;
-				}
-				else if (Thought.MeasureIdxWarm <= MeasureIdx && MeasureIdx < Thought.MeasureIdxReady)
-				{
-					Efficacy = EJamCookThoughtEfficacy::Mid;
-				}
-				else if (Thought.MeasureIdxReady <= MeasureIdx && MeasureIdx < Thought.MeasureIdxHitMin)
-				{
-					Efficacy = EJamCookThoughtEfficacy::Good;
-				}
-				else if (Thought.MeasureIdxHitMin <= MeasureIdx && MeasureIdx < Thought.MeasureIdxHitMax)
-				{
-					Efficacy = EJamCookThoughtEfficacy::Wow;
-				}
-				else if (Thought.MeasureIdxHitMax <= MeasureIdx && MeasureIdx < Thought.MeasureIdxOld)
-				{
-					Efficacy = EJamCookThoughtEfficacy::Good;
-				}
-				else if (Thought.MeasureIdxOld <= MeasureIdx && MeasureIdx < Thought.MeasureIdxForget)
-				{
-					Efficacy = EJamCookThoughtEfficacy::Mid;
-				}
-				else if (Thought.MeasureIdxForget <= MeasureIdx && MeasureIdx < Thought.MeasureIdxExtinct)
-				{
-					Efficacy = EJamCookThoughtEfficacy::Bad;
-				}
-				UE_LOG(LogTemp, Warning, TEXT("Chop_%d waiting for Trigger_%d. Current efficacy rating_%d/4"), Feeling.Thought.ChopId, Thought.TriggerId, Efficacy);
+				//// Remove Impulse from queue
+				//EJamCookThoughtEfficacy Efficacy = EJamCookThoughtEfficacy::Nope;
+				//if (Thought.MeasureIdxExist <= MeasureIdx && MeasureIdx < Thought.MeasureIdxWarm)
+				//{
+				//	Efficacy = EJamCookThoughtEfficacy::Bad;
+				//}
+				//else if (Thought.MeasureIdxWarm <= MeasureIdx && MeasureIdx < Thought.MeasureIdxReady)
+				//{
+				//	Efficacy = EJamCookThoughtEfficacy::Mid;
+				//}
+				//else if (Thought.MeasureIdxReady <= MeasureIdx && MeasureIdx < Thought.MeasureIdxHitMin)
+				//{
+				//	Efficacy = EJamCookThoughtEfficacy::Good;
+				//}
+				//else if (Thought.MeasureIdxHitMin <= MeasureIdx && MeasureIdx < Thought.MeasureIdxHitMax)
+				//{
+				//	Efficacy = EJamCookThoughtEfficacy::Wow;
+				//}
+				//else if (Thought.MeasureIdxHitMax <= MeasureIdx && MeasureIdx < Thought.MeasureIdxOld)
+				//{
+				//	Efficacy = EJamCookThoughtEfficacy::Good;
+				//}
+				//else if (Thought.MeasureIdxOld <= MeasureIdx && MeasureIdx < Thought.MeasureIdxForget)
+				//{
+				//	Efficacy = EJamCookThoughtEfficacy::Mid;
+				//}
+				//else if (Thought.MeasureIdxForget <= MeasureIdx && MeasureIdx < Thought.MeasureIdxExtinct)
+				//{
+				//	Efficacy = EJamCookThoughtEfficacy::Bad;
+				//}
+				//UE_LOG(LogTemp, Warning, TEXT("Chop_%d waiting for Trigger_%d. Current efficacy rating_%d/4"), Feeling.Thought.ChopId, Thought.TriggerId, Efficacy);
 
 				continue;
 			}
+
 			UE_LOG(LogTemp, Warning, TEXT("We made it on an impulse from Trigger_%d"), Feeling.Thought.TriggerId);
 			
 			// Remove Impulse from queue

@@ -10,7 +10,7 @@
 #include "JamRecipe.generated.h"
 
 UENUM(BlueprintType)
-enum class EJamVolumeTransitionType
+enum class EJamVolumeTransitionType : uint8
 {
 	Linear
 };
