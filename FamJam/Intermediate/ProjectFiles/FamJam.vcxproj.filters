@@ -51,6 +51,12 @@
     <ClInclude Include="..\..\Source\FamJam\JamChef.h">
       <Filter>Source\FamJam</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\FamJam\JamChefQuartzTrial.cpp">
+      <Filter>Source\FamJam</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamChefQuartzTrial.h">
+      <Filter>Source\FamJam</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\FamJam\JamChunkLibrarian.cpp">
       <Filter>Source\FamJam</Filter>
     </ClCompile>

@@ -67,7 +67,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A377B848-68C8-3D55-A8B2-7EDD979B6522}</ProjectGuid>
+    <ProjectGuid>{FACA4540-060E-3610-BDA6-8FB39DE1B80B}</ProjectGuid>
     <RootNamespace>FamJam</RootNamespace>
   </PropertyGroup>
   <Import Project="UECommon.props" />
@@ -270,6 +270,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\FamJam\JamChef.h"/>
+    <ClCompile Include="..\..\Source\FamJam\JamChefQuartzTrial.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FamJam\JamChefQuartzTrial.h"/>
     <ClCompile Include="..\..\Source\FamJam\JamChunkLibrarian.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

@@ -12,9 +12,9 @@ FJamRecipeOverview UJamRecipe::GetOverview()
 	float StepMeasureStart = 0;
 	for (FJamStep Step : Steps)
 	{
-		if (Overview.LastMeasure < (StepMeasureStart + Step.MeasuresCount))
+		if (Overview.LastMeasure < (StepMeasureStart + Step.MeasureLength))
 		{
-			Overview.LastMeasure = StepMeasureStart + Step.MeasuresCount;
+			Overview.LastMeasure = StepMeasureStart + Step.MeasureLength;
 			//UE_LOG(LogTemp, Warning, TEXT("Step at measure_%f has the latest measure at %f"), StepMeasureStart, Overview.LastMeasure);
 
 		}
@@ -53,7 +53,7 @@ FJamRecipeOverview UJamRecipe::GetOverview()
 				UE_LOG(LogTemp, Error, TEXT("Cook_%s was not found in the recipe CookNameToOverviewParamsMap"), *Chop.CookName.ToString());
 			}
 		}
-		StepMeasureStart += Step.MeasuresCount;
+		StepMeasureStart += Step.MeasureLength;
 	}
 
 	for (TPair<FName, FJamRecipeCookOverviewParams> CookNameToOverviewParams : CookNameToOverviewParamsMap)

@@ -14,7 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FAMJAM_JamChef_generated_h
 
-#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_20_INCLASS_NO_PURE_DECLS \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execConductCooks);
+
+
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_22_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUJamChef(); \
 	friend struct Z_Construct_UClass_UJamChef_Statics; \
@@ -23,7 +27,7 @@ public: \
 	DECLARE_SERIALIZER(UJamChef)
 
 
-#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_20_ENHANCED_CONSTRUCTORS \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UJamChef(UJamChef&&); \
@@ -35,12 +39,13 @@ public: \
 	NO_API virtual ~UJamChef();
 
 
-#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_17_PROLOG
-#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_20_GENERATED_BODY \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_19_PROLOG
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_20_INCLASS_NO_PURE_DECLS \
-	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_20_ENHANCED_CONSTRUCTORS \
+	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_22_INCLASS_NO_PURE_DECLS \
+	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

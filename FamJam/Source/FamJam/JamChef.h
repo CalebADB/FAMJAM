@@ -7,6 +7,8 @@
 
 #include "JamCook.h"
 
+#include "Quartz/AudioMixerClockHandle.h"
+#include "Quartz/QuartzSubsystem.h"
 #include "Kismet/GameplayStatics.h"
 
 #include "CoreMinimal.h"
@@ -31,6 +33,11 @@ private:
 public:
 	UPROPERTY(EditAnywhere)
 	FName TargetRecipeIndexName;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UQuartzClockHandle* Clock;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int JamBeatCount = 0;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	UJamRecipe* Recipe = nullptr;
@@ -67,6 +74,14 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	float VolumeRatio;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int StepBeatCountRemaining = 0;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int PrepNextStepBeatCountRemaining = 0;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool bIsNextStepPrepped = false;
+
+
 public:
 	// Sets default values for this component's properties
 	UJamChef();
@@ -78,13 +93,20 @@ protected:
 public:
 	void MiseEnPlace(UJamChunkLibrarian* InChunkLibrarian, UJamRecipeLibrarian* InRecipeLibrarian);
 
+private:
+	bool AttemptPrepClock(float RecipeStartTempo);
+
 public:
 	// Called every frame
 	void Update(float DeltaTime);
 
 	bool AttemptStartJam();
 	void FinishJam();
+	UFUNCTION(BlueprintCallable)
+	void ConductCooks();
 private:
-	void ConductCooks(float DeltaTime);
-	void CallChops(float StepMeasureIdx, FJamStep Step);
+	void PrepNextStep();
+	void DecideNextStep();
+	void PrepChops();
+	void FireNextStep();
 };

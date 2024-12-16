@@ -1,0 +1,94 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "JamChunkLibrarian.h"
+#include "JamRecipeLibrarian.h"
+
+#include "JamCook.h"
+
+#include "Kismet/GameplayStatics.h"
+#include "Quartz/AudioMixerClockHandle.h"
+
+#include "CoreMinimal.h"
+#include "Components/ActorComponent.h"
+#include "JamChefQuartzTrial.generated.h"
+
+
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+class FAMJAM_API UJamChefQuartzTrial : public UActorComponent
+{
+	GENERATED_BODY()
+
+private:
+	UPROPERTY(VisibleAnywhere)
+	bool bIsMiseEnPlace = false;
+
+	UJamRecipeLibrarian* RecipeLibrarian;
+	UJamChunkLibrarian* ChunkLibrarian;
+
+	TMap<FName, AJamCook*> Cooks;
+
+public:
+	UPROPERTY(EditAnywhere)
+	FName TargetRecipeIndexName;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UJamRecipe* Recipe = nullptr;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	FJamRecipeOverview RecipeOverview;
+
+	UPROPERTY(EditAnywhere)
+	bool bShouldAttemptToReadRecipe = false;
+	UPROPERTY(VisibleAnywhere)
+	bool bIsRunningJam = false;
+
+	UPROPERTY(EditAnywhere)
+	bool bShouldVisualizeJam = false;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	bool bShouldInitializeJamVisualizer = false;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	bool bIsVisualizingJam = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UQuartzClockHandle* JamClock;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int StepIdx;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float MeasureIdx;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int NextStepIdx;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float NextStepMeasureIdx;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float Tempo;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FVector2D TimeSignature = FVector2D(4, 4);
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	EJamKey Key;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float VolumeRatio;
+
+public:
+	// Sets default values for this component's properties
+	UJamChefQuartzTrial();
+
+protected:
+	// Called when the game starts
+	virtual void BeginPlay() override;
+
+public:
+	void MiseEnPlace(UJamChunkLibrarian* InChunkLibrarian, UJamRecipeLibrarian* InRecipeLibrarian);
+
+public:
+	// Called every frame
+	void Update(float DeltaTime);
+
+	bool AttemptStartJam();
+	void FinishJam();
+private:
+	void ConductCooks(float DeltaTime);
+	void PrepNextStep(float StepMeasureIdx, FJamStep Step);
+};

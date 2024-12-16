@@ -55960,6 +55960,12 @@
     <Filter Include="Source\Runtime\Core\Internal">
       <UniqueIdentifier>{480895E2-06C8-3EB6-9CA6-6AFE07EA200B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Runtime\Core\Internal\GenericPlatform">
+      <UniqueIdentifier>{DCFB8F93-5138-3BE4-AFD1-6F8976851B90}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.4\Engine\Source\Runtime\Core\Internal\GenericPlatform\GenericPlatformCrashContextEx.h">
+      <Filter>Source\Runtime\Core\Internal\GenericPlatform</Filter>
+    </ClInclude>
     <Filter Include="Source\Runtime\Core\Internal\IO">
       <UniqueIdentifier>{E24EE4C4-0AF9-3865-BF76-F69D268AA1B5}</UniqueIdentifier>
     </Filter>
@@ -188462,6 +188468,9 @@
       <Filter>Plugins\PCG\Source\PCG\Private\Elements\ControlFlow</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.4\Engine\Plugins\PCG\Source\PCG\Private\Elements\ControlFlow\PCGBranch.cpp">
+      <Filter>Plugins\PCG\Source\PCG\Private\Elements\ControlFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.4\Engine\Plugins\PCG\Source\PCG\Private\Elements\ControlFlow\PCGControlFlow.cpp">
       <Filter>Plugins\PCG\Source\PCG\Private\Elements\ControlFlow</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.4\Engine\Plugins\PCG\Source\PCG\Private\Elements\ControlFlow\PCGMultiSelect.cpp">

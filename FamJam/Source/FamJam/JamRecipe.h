@@ -120,7 +120,9 @@ struct FAMJAM_API FJamStep
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float MeasuresCount = 1.0f;
+	float MeasureLength = 1.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float NextStepPrepMeasureLength = 0.5f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	EJamKey Key = EJamKey::None;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

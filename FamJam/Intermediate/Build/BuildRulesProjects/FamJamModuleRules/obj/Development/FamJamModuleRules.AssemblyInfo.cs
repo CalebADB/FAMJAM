@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FamJamModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6fa6c3078be69d4cfeec54cceffa591bf2893b6e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b64b1274e867e40610e50ee9e5f06ccd00ba4a60")]
 [assembly: System.Reflection.AssemblyProductAttribute("FamJamModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FamJamModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

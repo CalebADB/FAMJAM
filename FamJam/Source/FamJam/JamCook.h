@@ -49,7 +49,7 @@ protected:
 public:
 	void MiseEnPlace(UJamChunkLibrarian* InChunkLibrarian, TArray<TSubclassOf<AJamCookBoard>> BoardClasses);
 
-	void ReceiveCalledChop(float NextStepMeasureIdx, FJamChop Chop);
+	void PrepChop(float NextStepMeasureIdx, FJamChop Chop);
 	
 	void ProcessChops(float MeasureIdx, float Tempo);
 

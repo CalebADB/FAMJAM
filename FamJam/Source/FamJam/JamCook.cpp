@@ -56,11 +56,11 @@ void AJamCook::MiseEnPlace(UJamChunkLibrarian* InChunkLibrarian, TArray<TSubclas
 	bIsMiseEnPlace = true;
 }
 
-void AJamCook::ReceiveCalledChop(float NextStepMeasureStart, FJamChop Chop)
+void AJamCook::PrepChop(float NextStepMeasureStart, FJamChop Chop)
 {
 	if (!bIsMiseEnPlace)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Cook_%s cannot call PrepChop because bIsMiseEnPlace is false"), *JamName.ToString());
+		UE_LOG(LogTemp, Warning, TEXT("Cook_%s cannot PrepChop because bIsMiseEnPlace is false"), *JamName.ToString());
 		return;
 	}
 	// Calculate Unique ChopID Key

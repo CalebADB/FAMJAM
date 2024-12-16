@@ -11,6 +11,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeJamChef() {}
 
 // Begin Cross Module References
+AUDIOMIXER_API UClass* Z_Construct_UClass_UQuartzClockHandle_NoRegister();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector2D();
 ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 FAMJAM_API UClass* Z_Construct_UClass_UJamChef();
@@ -21,9 +22,43 @@ FAMJAM_API UScriptStruct* Z_Construct_UScriptStruct_FJamRecipeOverview();
 UPackage* Z_Construct_UPackage__Script_FamJam();
 // End Cross Module References
 
+// Begin Class UJamChef Function ConductCooks
+struct Z_Construct_UFunction_UJamChef_ConductCooks_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "JamChef.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UJamChef_ConductCooks_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UJamChef, nullptr, "ConductCooks", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UJamChef_ConductCooks_Statics::Function_MetaDataParams), Z_Construct_UFunction_UJamChef_ConductCooks_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UJamChef_ConductCooks()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UJamChef_ConductCooks_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UJamChef::execConductCooks)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->ConductCooks();
+	P_NATIVE_END;
+}
+// End Class UJamChef Function ConductCooks
+
 // Begin Class UJamChef
 void UJamChef::StaticRegisterNativesUJamChef()
 {
+	UClass* Class = UJamChef::StaticClass();
+	static const FNameNativePtrPair Funcs[] = {
+		{ "ConductCooks", &UJamChef::execConductCooks },
+	};
+	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
 IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UJamChef);
 UClass* Z_Construct_UClass_UJamChef_NoRegister()
@@ -44,6 +79,14 @@ struct Z_Construct_UClass_UJamChef_Statics
 		{ "ModuleRelativePath", "JamChef.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TargetRecipeIndexName_MetaData[] = {
+		{ "Category", "JamChef" },
+		{ "ModuleRelativePath", "JamChef.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Clock_MetaData[] = {
+		{ "Category", "JamChef" },
+		{ "ModuleRelativePath", "JamChef.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_JamBeatCount_MetaData[] = {
 		{ "Category", "JamChef" },
 		{ "ModuleRelativePath", "JamChef.h" },
 	};
@@ -107,10 +150,24 @@ struct Z_Construct_UClass_UJamChef_Statics
 		{ "Category", "JamChef" },
 		{ "ModuleRelativePath", "JamChef.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StepBeatCountRemaining_MetaData[] = {
+		{ "Category", "JamChef" },
+		{ "ModuleRelativePath", "JamChef.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PrepNextStepBeatCountRemaining_MetaData[] = {
+		{ "Category", "JamChef" },
+		{ "ModuleRelativePath", "JamChef.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bIsNextStepPrepped_MetaData[] = {
+		{ "Category", "JamChef" },
+		{ "ModuleRelativePath", "JamChef.h" },
+	};
 #endif // WITH_METADATA
 	static void NewProp_bIsMiseEnPlace_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsMiseEnPlace;
 	static const UECodeGen_Private::FNamePropertyParams NewProp_TargetRecipeIndexName;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Clock;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_JamBeatCount;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Recipe;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_RecipeOverview;
 	static void NewProp_bShouldAttemptToReadRecipe_SetBit(void* Obj);
@@ -132,8 +189,16 @@ struct Z_Construct_UClass_UJamChef_Statics
 	static const UECodeGen_Private::FBytePropertyParams NewProp_Key_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_Key;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_VolumeRatio;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_StepBeatCountRemaining;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_PrepNextStepBeatCountRemaining;
+	static void NewProp_bIsNextStepPrepped_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsNextStepPrepped;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
+	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_UJamChef_ConductCooks, "ConductCooks" }, // 3431883613
+	};
+	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UJamChef>::IsAbstract,
 	};
@@ -145,6 +210,8 @@ void Z_Construct_UClass_UJamChef_Statics::NewProp_bIsMiseEnPlace_SetBit(void* Ob
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_bIsMiseEnPlace = { "bIsMiseEnPlace", nullptr, (EPropertyFlags)0x0040000000020001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UJamChef), &Z_Construct_UClass_UJamChef_Statics::NewProp_bIsMiseEnPlace_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsMiseEnPlace_MetaData), NewProp_bIsMiseEnPlace_MetaData) };
 const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_TargetRecipeIndexName = { "TargetRecipeIndexName", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, TargetRecipeIndexName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TargetRecipeIndexName_MetaData), NewProp_TargetRecipeIndexName_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_Clock = { "Clock", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, Clock), Z_Construct_UClass_UQuartzClockHandle_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Clock_MetaData), NewProp_Clock_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_JamBeatCount = { "JamBeatCount", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, JamBeatCount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_JamBeatCount_MetaData), NewProp_JamBeatCount_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_Recipe = { "Recipe", nullptr, (EPropertyFlags)0x0010000000020005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, Recipe), Z_Construct_UClass_UJamRecipe_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Recipe_MetaData), NewProp_Recipe_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_RecipeOverview = { "RecipeOverview", nullptr, (EPropertyFlags)0x0010000000020005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, RecipeOverview), Z_Construct_UScriptStruct_FJamRecipeOverview, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RecipeOverview_MetaData), NewProp_RecipeOverview_MetaData) }; // 3162822913
 void Z_Construct_UClass_UJamChef_Statics::NewProp_bShouldAttemptToReadRecipe_SetBit(void* Obj)
@@ -181,9 +248,18 @@ const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UJamChef_Stati
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_Key_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_Key = { "Key", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, Key), Z_Construct_UEnum_FamJam_EJamKey, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Key_MetaData), NewProp_Key_MetaData) }; // 3050601693
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_VolumeRatio = { "VolumeRatio", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, VolumeRatio), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_VolumeRatio_MetaData), NewProp_VolumeRatio_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_StepBeatCountRemaining = { "StepBeatCountRemaining", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, StepBeatCountRemaining), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StepBeatCountRemaining_MetaData), NewProp_StepBeatCountRemaining_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_PrepNextStepBeatCountRemaining = { "PrepNextStepBeatCountRemaining", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UJamChef, PrepNextStepBeatCountRemaining), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PrepNextStepBeatCountRemaining_MetaData), NewProp_PrepNextStepBeatCountRemaining_MetaData) };
+void Z_Construct_UClass_UJamChef_Statics::NewProp_bIsNextStepPrepped_SetBit(void* Obj)
+{
+	((UJamChef*)Obj)->bIsNextStepPrepped = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UJamChef_Statics::NewProp_bIsNextStepPrepped = { "bIsNextStepPrepped", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UJamChef), &Z_Construct_UClass_UJamChef_Statics::NewProp_bIsNextStepPrepped_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsNextStepPrepped_MetaData), NewProp_bIsNextStepPrepped_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UJamChef_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_bIsMiseEnPlace,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_TargetRecipeIndexName,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_Clock,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_JamBeatCount,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_Recipe,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_RecipeOverview,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_bShouldAttemptToReadRecipe,
@@ -200,6 +276,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UJamChef_
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_Key_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_Key,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_VolumeRatio,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_StepBeatCountRemaining,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_PrepNextStepBeatCountRemaining,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UJamChef_Statics::NewProp_bIsNextStepPrepped,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UJamChef_Statics::DependentSingletons[])() = {
@@ -212,11 +291,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_UJamChef_Statics::Class
 	"Engine",
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
-	nullptr,
+	FuncInfo,
 	Z_Construct_UClass_UJamChef_Statics::PropPointers,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
-	0,
+	UE_ARRAY_COUNT(FuncInfo),
 	UE_ARRAY_COUNT(Z_Construct_UClass_UJamChef_Statics::PropPointers),
 	0,
 	0x00B000A4u,
@@ -242,10 +321,10 @@ UJamChef::~UJamChef() {}
 struct Z_CompiledInDeferFile_FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UJamChef, UJamChef::StaticClass, TEXT("UJamChef"), &Z_Registration_Info_UClass_UJamChef, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UJamChef), 2354091208U) },
+		{ Z_Construct_UClass_UJamChef, UJamChef::StaticClass, TEXT("UJamChef"), &Z_Registration_Info_UClass_UJamChef, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UJamChef), 3652163648U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_3407192564(TEXT("/Script/FamJam"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_2877329816(TEXT("/Script/FamJam"),
 	Z_CompiledInDeferFile_FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamChef_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

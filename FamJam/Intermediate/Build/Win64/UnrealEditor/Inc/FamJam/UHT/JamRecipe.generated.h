@@ -57,32 +57,32 @@ template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamStepSpecialActionPa
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamStep>();
 
-#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_137_GENERATED_BODY \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_139_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamRecipeCookOverviewParams_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamRecipeCookOverviewParams>();
 
-#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_156_GENERATED_BODY \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_158_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamRecipeCookOverview_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamRecipeCookOverview>();
 
-#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_173_GENERATED_BODY \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_175_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FJamRecipeOverview_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> FAMJAM_API UScriptStruct* StaticStruct<struct FJamRecipeOverview>();
 
-#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_193_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetOverview);
 
 
-#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_INCLASS_NO_PURE_DECLS \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_193_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUJamRecipe(); \
 	friend struct Z_Construct_UClass_UJamRecipe_Statics; \
@@ -91,7 +91,7 @@ public: \
 	DECLARE_SERIALIZER(UJamRecipe)
 
 
-#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_ENHANCED_CONSTRUCTORS \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_193_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UJamRecipe(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -105,13 +105,13 @@ public: \
 	NO_API virtual ~UJamRecipe();
 
 
-#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_188_PROLOG
-#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_GENERATED_BODY \
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_190_PROLOG
+#define FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_193_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_INCLASS_NO_PURE_DECLS \
-	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_191_ENHANCED_CONSTRUCTORS \
+	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_193_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_193_INCLASS_NO_PURE_DECLS \
+	FID_Users_caleb_Documents_GitHub_FAMJAM_FamJam_Source_FamJam_JamRecipe_h_193_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
